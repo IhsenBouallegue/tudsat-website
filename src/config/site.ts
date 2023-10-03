@@ -2,8 +2,7 @@ import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "TUDSaT",
-  description:
-    "",
+  description: "",
   url: "",
   ogImage: "",
   links: {
