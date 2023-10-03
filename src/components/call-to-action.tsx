@@ -1,5 +1,3 @@
 export default function CallToAction() {
-  return (
-    <div>CallToAction</div>
-  )
+  return <div>CallToAction</div>;
 }
