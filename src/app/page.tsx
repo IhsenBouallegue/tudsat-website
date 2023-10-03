@@ -4,7 +4,6 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Team from "@/components/team";
-import Image from "next/image";
 
 export default function Home() {
   return (
