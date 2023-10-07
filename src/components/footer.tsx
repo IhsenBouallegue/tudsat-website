@@ -9,7 +9,7 @@ export default function Footer() {
       <Icons.logo />
       <div className="flex">
         <Link
-          href="/"
+          href="/imprint"
           className={cn(
             buttonVariants({ variant: "link" }),
             "text-primary-foreground",
