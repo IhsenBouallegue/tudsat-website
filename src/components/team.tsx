@@ -2,20 +2,20 @@ import {
   Card,
   CardContent,
   CardFooter,
-  CardHeader
-} from "@/components/ui/card"
-import Image from "next/image"
-import MemberCard from "./member-card"
+  CardHeader,
+} from "@/components/ui/card";
+import Image from "next/image";
+import MemberCard from "./member-card";
 
 export interface Member {
-  name: string
-  picture: string
-  position: string
+  name: string;
+  picture: string;
+  position: string;
   socials: {
-    github: string
-    twitter: string
-    linkedin: string
-  }
+    github: string;
+    twitter: string;
+    linkedin: string;
+  };
 }
 
 const team: Member[] = [
@@ -26,8 +26,8 @@ const team: Member[] = [
     socials: {
       github: "",
       twitter: "",
-      linkedin: ""
-    }
+      linkedin: "",
+    },
   },
   {
     name: "Darren Randolph",
@@ -36,8 +36,8 @@ const team: Member[] = [
     socials: {
       github: "",
       twitter: "",
-      linkedin: ""
-    }
+      linkedin: "",
+    },
   },
   {
     name: "Ayat Black",
@@ -46,10 +46,10 @@ const team: Member[] = [
     socials: {
       github: "",
       twitter: "",
-      linkedin: ""
-    }
+      linkedin: "",
+    },
   },
-]
+];
 
 export default function Team() {
   return (
@@ -58,11 +58,10 @@ export default function Team() {
         Meet the <u className="text-primary dark:text-primary-400">team</u>
       </h2>
       <div className="grid gap-x-6 grid-cols-2 md:grid-cols-3 w-full place-items-center auto-cols-max">
-        {team.map(member => {
-          return <MemberCard member={member} />
+        {team.map((member) => {
+          return <MemberCard member={member} />;
         })}
       </div>
     </section>
-
-  )
+  );
 }
