@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ProjectCard() {
   return (
-    <div className="flex-col w-72 h-96 rounded-lg overflow-hidden bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.3),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+    <div className="flex-col w-72 h-96 rounded-lg overflow-hidden bg-white shadow-md shadow-primary/10">
       <div className="h-1/2 overflow-hidden">
         <Image
           src={
