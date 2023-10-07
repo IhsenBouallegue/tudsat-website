@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Team from "@/components/team";
+import Testimonial from "@/components/testimonial";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Projects />
       <Team />
+      <Testimonial />
       <CallToAction />
       <Footer />
     </main>

@@ -59,7 +59,7 @@ export default function Team() {
       </h2>
       <div className="grid gap-x-6 grid-cols-2 md:grid-cols-3 w-full place-items-center auto-cols-max">
         {team.map((member) => {
-          return <MemberCard member={member} />;
+          return <MemberCard key={`membercard-${member}`} member={member} />;
         })}
       </div>
     </section>
