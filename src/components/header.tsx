@@ -6,7 +6,7 @@ import { MainNav } from "./header-links";
 
 export default function Header() {
   return (
-    <header className="container z-40 bg-background">
+    <header className="container z-40 relative">
       <div className="flex h-20 items-center justify-between py-6">
         <MainNav items={marketingConfig.mainNav} />
         <nav>

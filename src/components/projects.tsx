@@ -3,13 +3,13 @@ import ProjectCard from "./project-card";
 
 export default function Projects() {
   return (
-    <div className="flex-col gap-6 w-full">
+    <section className="flex flex-col">
       <h2 className="mb-32 text-3xl font-bold text-center">Our Projects</h2>
-      <div className="flex gap-16 justify-center">
+      <div className="flex flex-col md:flex-row gap-16 justify-center items-center">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
       </div>
-    </div>
+    </section>
   );
 }

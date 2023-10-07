@@ -5,7 +5,7 @@ import { Icons } from "./icons";
 
 export default function Footer() {
   return (
-    <div className="bg-primary text-primary-foreground p-6 flex items-center justify-between">
+    <div className="bg-primary mt-16 text-primary-foreground p-6 flex items-center justify-between">
       <Icons.logo />
       <div className="flex">
         <Link
@@ -15,7 +15,7 @@ export default function Footer() {
             "text-primary-foreground",
           )}
         >
-          Link
+          Imprint
         </Link>
         <Link
           href="/"
@@ -24,7 +24,7 @@ export default function Footer() {
             "text-primary-foreground",
           )}
         >
-          Link
+          Privacy Policy
         </Link>
         <Link
           href="/"
@@ -33,7 +33,16 @@ export default function Footer() {
             "text-primary-foreground",
           )}
         >
-          Link
+          Disclaimer
+        </Link>
+        <Link
+          href="/"
+          className={cn(
+            buttonVariants({ variant: "link" }),
+            "text-primary-foreground",
+          )}
+        >
+          Cookie Directive (EU)
         </Link>
       </div>
       <div>

@@ -1,10 +1,3 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import Image from "next/image";
 import MemberCard from "./member-card";
 
 export interface Member {
@@ -53,11 +46,9 @@ const team: Member[] = [
 
 export default function Team() {
   return (
-    <section className="mb-32 text-center">
-      <h2 className="mb-32 text-3xl font-bold">
-        Meet the <u className="text-primary dark:text-primary-400">team</u>
-      </h2>
-      <div className="grid gap-x-6 grid-cols-2 md:grid-cols-3 w-full place-items-center auto-cols-max">
+    <section className="flex-col text-center">
+      <h2 className="mb-32 text-3xl font-bold">Meet the Team</h2>
+      <div className="m-auto grid gap-x-6 grid-cols-1 md:grid-cols-3 w-full md:max-w-screen-lg place-items-center">
         {team.map((member) => {
           return <MemberCard key={`membercard-${member}`} member={member} />;
         })}

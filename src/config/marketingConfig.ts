@@ -11,8 +11,16 @@ export const marketingConfig: MarketingConfig = {
       href: "/#team",
     },
     {
-      title: "Member",
-      href: "/member",
+      title: "Trace",
+      href: "/trace",
+    },
+    {
+      title: "Rapid",
+      href: "/rapid",
+    },
+    {
+      title: "CanSat",
+      href: "/cansat",
     },
   ],
 };
