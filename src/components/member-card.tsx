@@ -3,7 +3,7 @@ import { Member } from "./team";
 export default 
 function MemberCard({ member }: { member: Member }) {
   return (
-    <div className="mb-24 max-w-xs md:mb-0">
+    <div className="mb-24 md:w-1/2 md:mb-0">
       <div
         className="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.3),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
         <div className="flex justify-center">

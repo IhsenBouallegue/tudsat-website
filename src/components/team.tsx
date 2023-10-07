@@ -53,11 +53,11 @@ const team: Member[] = [
 
 export default function Team() {
   return (
-    <section className="mb-32 text-center mx-5">
+    <section className="mb-32 text-center">
       <h2 className="mb-32 text-3xl font-bold">
         Meet the <u className="text-primary dark:text-primary-400">team</u>
       </h2>
-      <div className="grid gap-x-6 grid-cols-2 md:grid-cols-3 lg:gap-x-12 justify-center">
+      <div className="grid gap-x-6 grid-cols-2 md:grid-cols-3 w-full place-items-center auto-cols-max">
         {team.map(member => {
           return <MemberCard member={member} />
         })}
