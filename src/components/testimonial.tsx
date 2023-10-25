@@ -35,7 +35,7 @@ export default function Testimonial() {
               >
                 <circle cx={1} cy={1} r={1} />
               </svg>
-              <div className="text-gray-600">TUDSaT President</div>
+              <div className="text-muted">TUDSaT Board Member</div>
             </div>
           </figcaption>
         </figure>

@@ -4,18 +4,15 @@ import { Icons } from "./icons";
 
 export default function MemberCard({ member }: { member: Member }) {
   return (
-    <div className="block w-64 h-full rounded-lg bg-white shadow-md shadow-primary/10">
-      <div className="flex justify-center">
-        <div className="flex justify-center -mt-[75px]">
-          <Image
-            src={member.picture}
-            width={150}
-            height={150}
-            className="mx-auto rounded-full shadow-lg dark:shadow-black/20"
-            alt="Avatar"
-          />
-        </div>
-      </div>
+    <div className="w-64 h-full rounded-lg bg-white border-2 border-primary/10 shadow-lg shadow-primary/10">
+      <Image
+        src={member.picture}
+        width={150}
+        height={150}
+        className="-mt-[75px] h-[150px] min-h-[150px] mx-auto rounded-full shadow-lg"
+        style={{ objectFit: "cover" }}
+        alt="Avatar"
+      />
       <div className="p-6">
         <h5 className="mb-4 text-lg font-bold">{member.name}</h5>
         <p className="mb-6 text-accent">{member.position}</p>

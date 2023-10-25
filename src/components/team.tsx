@@ -13,9 +13,9 @@ export interface Member {
 
 const team: Member[] = [
   {
-    name: "Marta Smith",
+    name: "Sebastian Gasche",
     picture: "https://mdbcdn.b-cdn.net/img/new/avatars/6.jpg",
-    position: "Lead",
+    position: "Board Member",
     socials: {
       github: "",
       twitter: "",
@@ -23,9 +23,9 @@ const team: Member[] = [
     },
   },
   {
-    name: "Darren Randolph",
+    name: "Tyler Kraus",
     picture: "https://mdbcdn.b-cdn.net/img/new/avatars/7.jpg",
-    position: "Lead",
+    position: "Board Member",
     socials: {
       github: "",
       twitter: "",
@@ -33,39 +33,9 @@ const team: Member[] = [
     },
   },
   {
-    name: "Ayat Black",
-    picture: "https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg",
-    position: "Lead",
-    socials: {
-      github: "",
-      twitter: "",
-      linkedin: "",
-    },
-  },
-  {
-    name: "Ayat Black",
-    picture: "https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg",
-    position: "Lead",
-    socials: {
-      github: "",
-      twitter: "",
-      linkedin: "",
-    },
-  },
-  {
-    name: "Ayat Black",
-    picture: "https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg",
-    position: "Lead",
-    socials: {
-      github: "",
-      twitter: "",
-      linkedin: "",
-    },
-  },
-  {
-    name: "Ayat Black",
-    picture: "https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg",
-    position: "Lead",
+    name: "Ihsen Bouallegue",
+    picture: "/ihsen.jpg",
+    position: "Board Member",
     socials: {
       github: "",
       twitter: "",

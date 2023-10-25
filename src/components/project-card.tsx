@@ -1,25 +1,36 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ProjectCard() {
+export default function ProjectCard({
+  title,
+  subTitle,
+  description,
+  image,
+  link,
+}: {
+  title: string;
+  subTitle: string;
+  description: string;
+  image: string;
+  link: string;
+}) {
   return (
-    <div className="flex-col w-72 h-96 rounded-lg overflow-hidden bg-white shadow-md shadow-primary/10">
-      <div className="h-1/2 overflow-hidden">
-        <Image
-          src={
-            "https://images.unsplash.com/photo-1628126235206-5260b9ea6441?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"
-          }
-          width={288}
-          height={192}
-          alt="rocket"
-        />
-      </div>
-      <div className="p-5">
-        <h3 className="mb-3 text-2xl font-bold text-center">Project X</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempora
-          veniam deserunt expedita sunt.
+    <Link
+      href={link}
+      className="relative cursor-pointer overflow-hidden flex-col w-72 h-96 rounded-xl bg-white shadow-lg shadow-primary/10 group"
+    >
+      <Image src={image} fill alt={title} />
+      <div className="p-5 h-1/5 ease-in transition-all backdrop-blur-md bg-primary/[.3] text-white group-hover:backdrop-blur-lg group-hover:bg-white group-hover:text-black group-hover:h-1/2">
+        <h3 className="transition-[margin] mb-0 group-hover:mb-3 text-2xl font-bold text-center">
+          {title}
+        </h3>
+        <p className="text-center max-h-0 text-xs transition-all ease-in duration-200 opacity-100 group-hover:opacity-0">
+          {subTitle}
+        </p>
+        <p className="text-center transition-all ease-in duration-200 opacity-0 group-hover:opacity-100">
+          {description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }

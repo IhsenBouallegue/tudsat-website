@@ -18,9 +18,5 @@ export const marketingConfig: MarketingConfig = {
       title: "Rapid",
       href: "/rapid",
     },
-    {
-      title: "CanSat",
-      href: "/cansat",
-    },
   ],
 };
