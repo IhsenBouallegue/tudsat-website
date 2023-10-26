@@ -7,7 +7,13 @@ export default function Testimonial() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.slate.100),white)] opacity-20" />
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] rounded-xl bg-white shadow-xl shadow-primary/10 ring-1 ring-secondary/90 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
-        <Icons.logo className="mx-auto" />
+        <Image
+          src="tudsat_logo.svg"
+          alt="logo"
+          className="mx-auto"
+          width={24}
+          height={24}
+        />
         <figure className="mt-10">
           <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
             <p>
