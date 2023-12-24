@@ -24,6 +24,9 @@ import {
   User,
   X,
   LucideIcon,
+  Instagram,
+  Youtube,
+  Linkedin,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -68,4 +71,7 @@ export const Icons = {
   ),
   twitter: Twitter,
   check: Check,
+  instagram: Instagram,
+  youtube: Youtube,
+  linkedin: Linkedin,
 };

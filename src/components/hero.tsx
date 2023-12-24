@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "./ui/button";
 
 export default function Hero() {
@@ -15,6 +16,26 @@ export default function Hero() {
           }}
         />
       </div>
+
+      <div className="absolute left-[10%] top-[30%] saturate-0 hover:saturate-100 transition-all duration-1000">
+        <Image
+          className="animate-float"
+          src="/frodo.png"
+          alt="Frodo"
+          width={300}
+          height={400}
+        />
+      </div>
+
+      <div className="absolute right-[10%] top-[50%] saturate-0 hover:saturate-100 transition-all duration-1000">
+        <Image
+          className="animate-float"
+          src="/trace.png"
+          alt="Frodo"
+          width={200}
+          height={400}
+        />
+      </div>
       <div className="mx-auto max-w-2xl pb-32 py-16 sm:py-24 lg:py-36">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
@@ -28,7 +49,7 @@ export default function Hero() {
             other space-related technologies.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button>Get started</Button>
+            <Button>Join Now</Button>
             <Button variant="link">Learn more</Button>
           </div>
         </div>
@@ -45,6 +66,6 @@ export default function Hero() {
           }}
         />
       </div>
-    </div>
+    </div >
   );
 }

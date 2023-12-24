@@ -6,14 +6,14 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="bg-primary mt-16 text-primary-foreground p-6 flex items-center justify-between">
-      <Image src="tudsat_logo.svg" alt="logo" width={24} height={24} />
+    <div className="bg-secondary mt-16 text-secondary-foreground p-4 flex items-center justify-between">
+      <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
       <div className="flex">
         <Link
           href="/imprint"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-primary-foreground"
+            "text-secondary-foreground"
           )}
         >
           Imprint
@@ -22,7 +22,7 @@ export default function Footer() {
           href="/"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-primary-foreground"
+            "text-secondary-foreground"
           )}
         >
           Privacy Policy
@@ -31,7 +31,7 @@ export default function Footer() {
           href="/"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-primary-foreground"
+            "text-secondary-foreground"
           )}
         >
           Disclaimer
@@ -40,7 +40,7 @@ export default function Footer() {
           href="/"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-primary-foreground"
+            "text-secondary-foreground"
           )}
         >
           Cookie Directive (EU)
@@ -48,13 +48,13 @@ export default function Footer() {
       </div>
       <div>
         <Button variant="ghost" size="icon">
-          <Icons.twitter />
+          <Icons.instagram />
         </Button>
         <Button variant="ghost" size="icon">
-          <Icons.settings />
+          <Icons.linkedin />
         </Button>
         <Button variant="ghost" size="icon">
-          <Icons.pizza />
+          <Icons.youtube />
         </Button>
       </div>
     </div>
