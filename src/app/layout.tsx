@@ -5,6 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import StarrySkyCanvas from "@/components/starry-sky-canvas";
+import { cn } from "@/lib/utils";
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -20,14 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={plusJakartaSans.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+      <ThemeProvider attribute="class" defaultTheme="dark">
+        <body className={cn(plusJakartaSans.className, "bg-background")}>
           <StarrySkyCanvas />
           <Header />
           {children}
           <Footer />
-        </ThemeProvider>
-      </body>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
