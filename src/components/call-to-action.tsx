@@ -21,12 +21,12 @@ export default function Example() {
           />
         </svg>
         <div className="max-w-md text-center my-32 lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Put Your Skills to Use.
             <br />
             Join our Team today.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p className="mt-6 text-lg leading-8 text-muted">
             If you are not sure yet, you can always join our Discord server and get to know us.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">

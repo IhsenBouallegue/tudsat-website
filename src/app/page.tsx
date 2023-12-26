@@ -5,7 +5,7 @@ import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Sponsors from "@/components/sponsors";
 import Team from "@/components/team";
-import Testimonial from "@/components/testimonial";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <Sponsors />
         <Projects />
         <Team />
-        <Testimonial />
+        <Testimonials />
         <CallToAction />
       </div>
     </main>
