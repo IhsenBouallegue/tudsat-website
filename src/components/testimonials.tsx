@@ -22,8 +22,6 @@ export default function Testimonials() {
     }
 
     api.on("select", () => {
-      console.log("select");
-
       setSelectedIndex(api.selectedScrollSnap())
     })
   }, [api])
