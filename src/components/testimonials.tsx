@@ -73,7 +73,7 @@ export default function Testimonials() {
           {testimonials.map((_, index) => (
             <div
               key={index}
-              onClick={() => api.scrollTo(index)}
+              onClick={() => api?.scrollTo(index)}
               className={cn(
                 "w-4 h-1 rounded-full cursor-pointer bg-primary/20 transition-all duration-1000",
                 index === selectedIndex && "bg-primary w-8",
