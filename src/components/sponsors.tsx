@@ -15,8 +15,7 @@ const sponsors = [
   { image: "/sponsors/13-tu_freunde.png", alt: "tu-freunde" },
   { image: "/sponsors/14-fablab.png", alt: "fablab" },
   { image: "/sponsors/15-fsr.png", alt: "fsr" },
-
-]
+];
 
 export default function Sponsors() {
   return (
@@ -25,7 +24,7 @@ export default function Sponsors() {
         Thanks to these fine folks for helping TUDSaT thrive
       </h2>
       <div className="mx-auto mt-12 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-        {sponsors.map((sponsor) =>
+        {sponsors.map((sponsor) => (
           <Image
             key={sponsor.alt}
             className="col-span-2 max-h-12 saturate-0 hover:saturate-100 w-full object-contain lg:col-span-1"
@@ -33,7 +32,8 @@ export default function Sponsors() {
             alt={sponsor.alt}
             width={158}
             height={48}
-          />)}
+          />
+        ))}
       </div>
     </section>
   );

@@ -27,7 +27,8 @@ export default function Example() {
             Join our Team today.
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted">
-            If you are not sure yet, you can always join our Discord server and get to know us.
+            If you are not sure yet, you can always join our Discord server and
+            get to know us.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
             <Link

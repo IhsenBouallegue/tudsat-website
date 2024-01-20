@@ -54,7 +54,7 @@ export default function StudiesField({
                   role="combobox"
                   className={cn(
                     "w-[200px] justify-between",
-                    !field.value && "text-muted-foreground"
+                    !field.value && "text-muted-foreground",
                   )}
                 >
                   {field.value
@@ -83,7 +83,7 @@ export default function StudiesField({
                           "mr-2 h-4 w-4",
                           study.value === field.value
                             ? "opacity-100"
-                            : "opacity-0"
+                            : "opacity-0",
                         )}
                       />
                       {study.label}

@@ -61,7 +61,8 @@ const team: Member[] = [
       twitter: "",
       linkedin: "",
     },
-  },  {
+  },
+  {
     name: "Manuel Schlüsener ",
     picture: "/anonym.jpg",
     position: "Rocket Team Co-Lead",

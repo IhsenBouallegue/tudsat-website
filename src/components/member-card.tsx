@@ -14,7 +14,9 @@ export default function MemberCard({ member }: { member: Member }) {
       />
       <div className="p-6">
         <h5 className="mb-2 text-xl font-bold">{member.name}</h5>
-        <p className="mb-6 text-sm text-accent tracking-widest">{member.position}</p>
+        <p className="mb-6 text-sm text-accent tracking-widest">
+          {member.position}
+        </p>
       </div>
     </div>
   );

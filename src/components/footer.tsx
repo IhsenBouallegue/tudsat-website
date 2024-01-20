@@ -13,7 +13,7 @@ export default function Footer() {
           href="/imprint"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-secondary-foreground"
+            "text-secondary-foreground",
           )}
         >
           Imprint
@@ -22,7 +22,7 @@ export default function Footer() {
           href="/"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-secondary-foreground"
+            "text-secondary-foreground",
           )}
         >
           Privacy Policy
@@ -31,7 +31,7 @@ export default function Footer() {
           href="/"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-secondary-foreground"
+            "text-secondary-foreground",
           )}
         >
           Disclaimer
@@ -40,7 +40,7 @@ export default function Footer() {
           href="/"
           className={cn(
             buttonVariants({ variant: "link" }),
-            "text-secondary-foreground"
+            "text-secondary-foreground",
           )}
         >
           Cookie Directive (EU)

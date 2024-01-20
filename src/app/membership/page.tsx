@@ -10,11 +10,24 @@ export default function page() {
       </p>
       {/* <MembershipForm /> */}
       <div>
-        <iframe src="https://easyverein.com/public/TUDSaT/applicationform/1979?iframe=True"
-          style={{ border: "none", width: "100%", minHeight: "1000px", height: "max-content" }} />
+        <iframe
+          src="https://easyverein.com/public/TUDSaT/applicationform/1979?iframe=True"
+          style={{
+            border: "none",
+            width: "100%",
+            minHeight: "1000px",
+            height: "max-content",
+          }}
+        />
         <br />
         <small>
-          <a href="https://easyverein.com" style={{ textDecoration: "none", color: "#878787" }} title="Vereinsverwaltungssoftware easyVerein">Association management via easyVerein</a>
+          <a
+            href="https://easyverein.com"
+            style={{ textDecoration: "none", color: "#878787" }}
+            title="Vereinsverwaltungssoftware easyVerein"
+          >
+            Association management via easyVerein
+          </a>
         </small>
       </div>
     </section>
