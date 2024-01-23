@@ -1,13 +1,21 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
-import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Footer from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
-import StarrySkyCanvas from "@/components/starry-sky-canvas";
-import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
+import "./globals.css";
+
+const StarrySkyCanvas = dynamic(
+  () => import("@/components/starry-sky-canvas"),
+  {
+    ssr: false,
+  },
+);
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
+// const orbitron = Orbitron({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "TUDSaT",
