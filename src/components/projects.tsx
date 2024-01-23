@@ -11,7 +11,7 @@ export default function Projects() {
           description="CubeSat Development for Space Safety Research."
           image="/trace-bg.png"
           link="/trace"
-          color="bg-[#327227]/30"
+          color="bg-[#327227]"
         />
         <ProjectCard
           title="RAPID"
@@ -19,7 +19,7 @@ export default function Projects() {
           description="Pushing the boundaries of rocketry. Together we want to reimage rockets and explore new possibilites."
           image="/frodo-bg.png"
           link="/rapid"
-          color="bg-[#930D16]/70"
+          color="bg-[#930D16]"
         />
       </div>
     </section>

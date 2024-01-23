@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Orbitron, Plus_Jakarta_Sans } from "next/font/google";
 import dynamic from "next/dynamic";
 import "./globals.css";
 
@@ -14,8 +14,8 @@ const StarrySkyCanvas = dynamic(
   },
 );
 
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
-// const orbitron = Orbitron({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable:"--font-plus-jakarta-sans" });
+const orbitron = Orbitron({ subsets: ["latin"], variable:"--font-orbitron" });
 
 export const metadata: Metadata = {
   title: "TUDSaT",
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider attribute="class" defaultTheme="dark">
-        <body className={cn(plusJakartaSans.className, "bg-background")}>
+        <body className={cn( orbitron.variable, plusJakartaSans.variable, "bg-background")}>
           <StarrySkyCanvas />
           <Header />
           {children}

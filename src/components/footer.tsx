@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="bg-secondary mt-16 text-secondary-foreground p-4 flex items-center justify-between">
+    <div className="bg-primary mt-16 text-secondary-foreground p-4 flex items-center justify-between">
       <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
       <div className="flex">
         <Link

@@ -6,7 +6,7 @@ import { buttonVariants } from "./ui/button";
 export default function Example() {
   return (
     <section className="sm:px-6 lg:px-8">
-      <div className="relative isolate backdrop-blur-sm backdrop-saturate-200 shadow-xl shadow-primary/10 ring-2 ring-secondary/90 overflow-hidden px-6 pt-16 flex flex-col rounded-3xl sm:px-64 md:pt-64 lg:gap-x-60 lg:px-24 lg:pt-0 lg:flex-row">
+      <div className="relative isolate backdrop-blur-sm backdrop-saturate-200 shadow-xl shadow-primary/10 ring-2 ring-accent/90 overflow-hidden px-6 pt-16 flex flex-col rounded-3xl sm:px-64 md:pt-64 lg:gap-x-60 lg:px-24 lg:pt-0 lg:flex-row">
         <svg
           viewBox="0 0 1024 1024"
           className="bg-gradient-to-r from-accent to-transparent absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"

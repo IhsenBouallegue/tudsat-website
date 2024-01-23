@@ -8,6 +8,10 @@ module.exports = {
     './src/**/*.{ts,tsx}',
   ],
   theme: {
+    fontFamily: {
+      'display': ['Orbitron'],
+      'body': ['"Jakarta Plus Sans"'],
+    },
     container: {
       center: true,
       padding: "2rem",

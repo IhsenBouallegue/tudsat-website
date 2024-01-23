@@ -13,11 +13,11 @@ export default function Header() {
           <Link
             href="/membership"
             className={cn(
-              buttonVariants({ variant: "secondary", size: "sm" }),
+              buttonVariants({ variant: "outline", size: "sm" }),
               "px-4",
             )}
           >
-            Join Now
+            Membership
           </Link>
         </nav>
       </div>

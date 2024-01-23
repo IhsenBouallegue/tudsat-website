@@ -4,47 +4,55 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 249 46% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 249 46% 8%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 249 46% 8%;
-    --primary: 250 100% 15%;
-    --primary-foreground: 0 0% 100%;
+    --background: 248 100% 97%;
+    --foreground: 249 37% 7%;
+    --card: 248 100% 97%;
+    --card-foreground: 249 37% 7%;
+    --popover: 248 100% 97%;
+    --popover-foreground: 249 37% 7%;
+    --primary: 216 76% 82%;
+    --primary-foreground: 249 37% 7%;
     --secondary: 311 46% 86%;
-    --secondary-foreground: 249 46% 8%;
-    --muted: 0 0% 20%;
-    --muted-foreground: 249 46% 70%;
-    --accent: 310 46% 46%;
-    --accent-foreground: 0 0% 100%;
+    --secondary-foreground: 249 37% 7%;
+    --muted: 248 100% 20%;
+    --muted-foreground: 249 37% 70%;
+    --accent: 219 48% 65%;
+    --accent-foreground: 249 37% 7%;
     --destructive: 0 85% 60%;
-    --destructive-foreground: 249 46% 8%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 310 46% 40%;
+    --destructive-foreground: 249 37% 7%;
+    --border: 248 100% 20%;
+    --input: 248 100% 20%;
+    --ring: 219 48% 40%;
     --radius: 0.5rem;
   }
  
   .dark {
-    --background: 246 100% 3%;
-    --foreground: 249 46% 92%;
-    --card: 0 0% 0%;
-    --card-foreground: 249 46% 92%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 249 46% 92%;
-    --primary: 249 100% 85%;
-    --primary-foreground: 0 0% 0%;
+    --background: 248 100% 3%;
+    --foreground: 249 37% 93%;
+    --card: 248 100% 3%;
+    --card-foreground: 249 37% 93%;
+    --popover: 248 100% 3%;
+    --popover-foreground: 249 37% 93%;
+    --primary: 216 76% 18%;
+    --primary-foreground: 249 37% 93%;
     --secondary: 311 46% 14%;
-    --secondary-foreground: 249 46% 92%;
-    --muted: 0 0% 80%;
-    --muted-foreground: 249 46% 92%;
-    --accent: 310 46% 54%;
-    --accent-foreground: 0 0% 0%;
+    --secondary-foreground: 249 37% 93%;
+    --muted: 248 100% 80%;
+    --muted-foreground: 249 37% 93%;
+    --accent: 219 48% 35%;
+    --accent-foreground: 249 37% 93%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 248 45% 10%;
-    --border: 0 0% 60%;
-    --input: 0 0% 80%;
-    --ring: 310 46% 60%;
+    --destructive-foreground: 249 37% 10%;
+    --border: 248 100% 60%;
+    --input: 248 100% 80%;
+    --ring: 219 48% 60%;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron), sans-serif; 
+}
+
+body {
+  font-family: var(--font-plus-jakarta-sans), sans-serif; 
 }
