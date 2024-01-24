@@ -2479,7 +2479,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:8.0.0-rc20":
+"embla-carousel@npm:8.0.0-rc20, embla-carousel@npm:^8.0.0-rc20":
   version: 8.0.0-rc20
   resolution: "embla-carousel@npm:8.0.0-rc20"
   checksum: 77e821f956a1f2c3282a9ab0a6b8a9bb9753e7a72d49a91a441deab26a8f41b2709df85e3321bc16dd34ed3e3ab22e6d1bf5163ce0d7fe3e4b43d35c90bfbb2f
@@ -5652,6 +5652,7 @@ __metadata:
     clsx: "npm:^2.0.0"
     cmdk: "npm:^0.2.0"
     date-fns: "npm:^2.30.0"
+    embla-carousel: "npm:^8.0.0-rc20"
     embla-carousel-autoplay: "npm:^8.0.0-rc20"
     embla-carousel-react: "npm:^8.0.0-rc20"
     eslint: "npm:^8"
