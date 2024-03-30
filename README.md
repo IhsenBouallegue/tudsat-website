@@ -2,23 +2,30 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Install Nodejs
+```
+https://nodejs.org/en/download
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Clone Repo (Install git if not already)
+```
+git clone https://github.com/IhsenBouallegue/tudsat
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Enable the use of the Yarn package manager 
+```
+corpack enable
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install all dependencies (then you only need this when the dependencies in package.json are updated)
+```
+yarn install
+```
+
+Start development server
+```
+yarn dev
+```
 
 ## Learn More
 
