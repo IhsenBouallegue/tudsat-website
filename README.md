@@ -14,7 +14,7 @@ git clone https://github.com/IhsenBouallegue/tudsat
 
 Enable the use of the Yarn package manager 
 ```
-corpack enable
+corepack enable
 ```
 
 Install all dependencies (then you only need this when the dependencies in package.json are updated)
