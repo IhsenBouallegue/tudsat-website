@@ -31,7 +31,7 @@ export default function Hero() {
         <Image
           className="animate-float"
           src="/trace.png"
-          alt="Frodo"
+          alt="Trace"
           width={200}
           height={400}
         />
