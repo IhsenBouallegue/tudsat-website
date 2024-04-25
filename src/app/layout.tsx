@@ -14,8 +14,11 @@ const StarrySkyCanvas = dynamic(
   },
 );
 
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable:"--font-plus-jakarta-sans" });
-const orbitron = Orbitron({ subsets: ["latin"], variable:"--font-orbitron" });
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+});
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 
 export const metadata: Metadata = {
   title: "TUDSaT",
@@ -30,7 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider attribute="class" defaultTheme="dark">
-        <body className={cn( orbitron.variable, plusJakartaSans.variable, "bg-background")}>
+        <body
+          className={cn(
+            orbitron.variable,
+            plusJakartaSans.variable,
+            "bg-background",
+          )}
+        >
           <StarrySkyCanvas />
           <Header />
           {children}
