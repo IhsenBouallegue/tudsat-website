@@ -1,0 +1,38 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Sweet"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "If you are not sure yet, you can always join our Discord server and get to know us.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"call_to_action_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Join Now"
+			}
+		},
+		"items": []
+	}
+]
