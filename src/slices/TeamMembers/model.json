@@ -1,0 +1,26 @@
+{
+  "id": "team_members",
+  "type": "SharedSlice",
+  "name": "TeamMembers",
+  "description": "TeamMembers",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

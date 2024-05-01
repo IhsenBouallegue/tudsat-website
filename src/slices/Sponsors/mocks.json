@@ -5,8 +5,8 @@
 		"primary": {
 			"title": {
 				"__TYPE__": "FieldContent",
-				"value": "best",
-				"type": "Text"
+				"type": "Text",
+				"value": "Thanks to these fine folks for helping TUDSaT thrive"
 			}
 		},
 		"items": [

@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = SponsorsSlice | HeroSlice;
+type HomeDocumentDataSlicesSlice = ShowcaseSlice | SponsorsSlice | HeroSlice;
 
 /**
  * Content for Home documents
@@ -237,6 +237,116 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Showcase → Primary*
+ */
+export interface ShowcaseSliceDefaultPrimary {
+  /**
+   * Title field in *Showcase → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Showcase → Items*
+ */
+export interface ShowcaseSliceDefaultItem {
+  /**
+   * Title field in *Showcase → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *Showcase → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.items[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *Showcase → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Background Image field in *Showcase → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.items[].background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Showcase → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.ContentRelationshipField<"page">;
+
+  /**
+   * Color field in *Showcase → Items*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase.items[].color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  color: prismic.ColorField;
+}
+
+/**
+ * Default variation for Showcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ShowcaseSliceDefaultPrimary>,
+  Simplify<ShowcaseSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Showcase*
+ */
+type ShowcaseSliceVariation = ShowcaseSliceDefault;
+
+/**
+ * Showcase Shared Slice
+ *
+ * - **API ID**: `showcase`
+ * - **Description**: Showcase
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowcaseSlice = prismic.SharedSlice<
+  "showcase",
+  ShowcaseSliceVariation
+>;
+
+/**
  * Primary content in *Sponsors → Primary*
  */
 export interface SponsorsSliceDefaultPrimary {
@@ -244,7 +354,7 @@ export interface SponsorsSliceDefaultPrimary {
    * Title field in *Sponsors → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Thanks to these fine folks for helping TUDSaT thrive
    * - **API ID Path**: sponsors.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -306,6 +416,51 @@ export type SponsorsSlice = prismic.SharedSlice<
   SponsorsSliceVariation
 >;
 
+/**
+ * Primary content in *TeamMembers → Primary*
+ */
+export interface TeamMembersSliceDefaultPrimary {
+  /**
+   * Title field in *TeamMembers → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TeamMembers Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMembersSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TeamMembersSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TeamMembers*
+ */
+type TeamMembersSliceVariation = TeamMembersSliceDefault;
+
+/**
+ * TeamMembers Shared Slice
+ *
+ * - **API ID**: `team_members`
+ * - **Description**: TeamMembers
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMembersSlice = prismic.SharedSlice<
+  "team_members",
+  TeamMembersSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -331,11 +486,20 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ShowcaseSlice,
+      ShowcaseSliceDefaultPrimary,
+      ShowcaseSliceDefaultItem,
+      ShowcaseSliceVariation,
+      ShowcaseSliceDefault,
       SponsorsSlice,
       SponsorsSliceDefaultPrimary,
       SponsorsSliceDefaultItem,
       SponsorsSliceVariation,
       SponsorsSliceDefault,
+      TeamMembersSlice,
+      TeamMembersSliceDefaultPrimary,
+      TeamMembersSliceVariation,
+      TeamMembersSliceDefault,
     };
   }
 }

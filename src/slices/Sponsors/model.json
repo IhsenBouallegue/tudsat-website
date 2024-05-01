@@ -16,7 +16,7 @@
           "type": "Text",
           "config": {
             "label": "Title",
-            "placeholder": ""
+            "placeholder": "Thanks to these fine folks for helping TUDSaT thrive"
           }
         }
       },
