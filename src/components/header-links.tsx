@@ -9,15 +9,12 @@ import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
 import Image from "next/image";
+import { Content } from "@prismicio/client";
+import * as prismic from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 
-interface MainNavProps {
-  items?: any[];
-  children?: React.ReactNode;
-}
-
-export function MainNav({ items, children }: MainNavProps) {
+export function MainNav({ items }: { items: Content.HeaderDocumentDataNavigationItem[] }) {
   const segment = useSelectedLayoutSegment();
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
     <div className="flex gap-6 md:gap-10">
@@ -27,33 +24,28 @@ export function MainNav({ items, children }: MainNavProps) {
       </Link>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">
-          {items?.map((item, index) => (
-            <Link
-              key={index}
-              href={item.disabled ? "#" : item.href}
+          {items?.map((item) => (
+            <PrismicNextLink
+              key={item.label}
+              field={item.link}
               className={cn(
                 "flex items-center text-lg font-medium transition-colors hover:text-accent sm:text-sm",
-                item.href.startsWith(`/${segment}`) ? "text-foreground" : "text-foreground/80",
-                item.disabled && "cursor-not-allowed opacity-80",
+                prismic.asLink(item.link)?.startsWith(`/${segment}`)
+                  ? "text-foreground"
+                  : "text-foreground/80",
               )}
             >
-              {item.title}
-            </Link>
+              {item.label}
+            </PrismicNextLink>
           ))}
         </nav>
       ) : null}
-      <button
-        className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
-      >
-        {showMobileMenu ? (
-          <Icons.close />
-        ) : (
-          <Image src="tudsat_logo.svg" alt="logo" width={24} height={24} />
-        )}
-        <span className="font-bold">Menu</span>
-      </button>
-      {showMobileMenu && items && <MobileNav items={items}>{children}</MobileNav>}
+
+      {items && (
+        <div className="md:hidden">
+          <MobileNav items={items} />
+        </div>
+      )}
     </div>
   );
 }

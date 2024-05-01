@@ -1,0 +1,60 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "navigation": {
+        "type": "Group",
+        "config": {
+          "label": "navigation",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "socials": {
+        "type": "Group",
+        "config": {
+          "label": "Socials",
+          "repeat": true,
+          "fields": {
+            "social_platform": {
+              "type": "Select",
+              "config": {
+                "label": "Social Platform",
+                "placeholder": "",
+                "options": ["instagram", "linkedin", "discord", "youtube"]
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

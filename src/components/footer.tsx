@@ -1,50 +1,44 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { Button, buttonVariants } from "./ui/button";
-import { Icons } from "./icons";
+import { createClient } from "@/prismicio";
+import { PrismicNextLink } from "@prismicio/next";
 import Image from "next/image";
+import { Icons } from "./icons";
+import { buttonVariants } from "./ui/button";
 
-export default function Footer() {
+export default async function Footer() {
+  const client = createClient();
+  const footer = await client.getSingle("footer");
+
   return (
-    <div className="bg-primary mt-16 text-secondary-foreground p-4 flex items-center justify-between">
+    <footer className="bg-primary mt-16 text-secondary-foreground p-4 flex items-center justify-between">
       <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
-      <div className="flex">
-        <Link
-          href="/imprint"
-          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
-        >
-          Imprint
-        </Link>
-        <Link
-          href="/"
-          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
-        >
-          Privacy Policy
-        </Link>
-        <Link
-          href="/"
-          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
-        >
-          Disclaimer
-        </Link>
-        <Link
-          href="/"
-          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
-        >
-          Cookie Directive (EU)
-        </Link>
-      </div>
+      <nav className="flex">
+        <ul>
+          {footer.data.navigation.map((item) => (
+            <li key={item.label}>
+              <PrismicNextLink
+                field={item.link}
+                className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
+              >
+                {item.label}
+              </PrismicNextLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
       <div>
-        <Button variant="ghost" size="icon">
-          <Icons.instagram />
-        </Button>
-        <Button variant="ghost" size="icon">
-          <Icons.linkedin />
-        </Button>
-        <Button variant="ghost" size="icon">
-          <Icons.youtube />
-        </Button>
+        {footer.data.socials.map((social) => (
+          <PrismicNextLink
+            field={social.link}
+            key={social.social_platform}
+            className={buttonVariants({ variant: "ghost", size: "icon" })}
+          >
+            {social.social_platform === "instagram" && <Icons.instagram />}
+            {social.social_platform === "linkedin" && <Icons.linkedin />}
+            {social.social_platform === "youtube" && <Icons.youtube />}
+          </PrismicNextLink>
+        ))}
       </div>
-    </div>
+    </footer>
   );
 }
