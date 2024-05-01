@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = ShowcaseSlice | SponsorsSlice | HeroSlice;
+type HomeDocumentDataSlicesSlice =
+  | TeamMembersSlice
+  | ShowcaseSlice
+  | SponsorsSlice
+  | HeroSlice;
 
 /**
  * Content for Home documents
@@ -432,6 +436,41 @@ export interface TeamMembersSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *TeamMembers → Items*
+ */
+export interface TeamMembersSliceDefaultItem {
+  /**
+   * Name field in *TeamMembers → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Position field in *TeamMembers → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.items[].position
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Photo field in *TeamMembers → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.items[].photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  photo: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for TeamMembers Slice
  *
  * - **API ID**: `default`
@@ -441,7 +480,7 @@ export interface TeamMembersSliceDefaultPrimary {
 export type TeamMembersSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<TeamMembersSliceDefaultPrimary>,
-  never
+  Simplify<TeamMembersSliceDefaultItem>
 >;
 
 /**
@@ -498,6 +537,7 @@ declare module "@prismicio/client" {
       SponsorsSliceDefault,
       TeamMembersSlice,
       TeamMembersSliceDefaultPrimary,
+      TeamMembersSliceDefaultItem,
       TeamMembersSliceVariation,
       TeamMembersSliceDefault,
     };
