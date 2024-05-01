@@ -1,10 +1,3 @@
-import CallToAction from "@/components/call-to-action";
-import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Sponsors from "@/components/sponsors";
-import Team from "@/components/team";
-import Testimonials from "@/components/testimonials";
-
 // export default async function Home() {
 //   return (
 //     <main>
@@ -20,8 +13,8 @@ import Testimonials from "@/components/testimonials";
 //   );
 // }
 
-import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
+import { Metadata } from "next";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";

@@ -12,8 +12,8 @@ export default async function Footer() {
   return (
     <footer className="bg-primary mt-16 text-secondary-foreground p-4 flex items-center justify-between">
       <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
-      <nav className="flex">
-        <ul>
+      <nav>
+        <ul className="flex">
           {footer.data.navigation.map((item) => (
             <li key={item.label}>
               <PrismicNextLink
