@@ -1,0 +1,20 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "content": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Irure in elit do tempor commodo enim elit nulla ad ea non et duis. Qui id duis velit fugiat proident tempor reprehenderit sint."
+            }
+          }
+        ]
+      }
+    },
+    "items": []
+  }
+]

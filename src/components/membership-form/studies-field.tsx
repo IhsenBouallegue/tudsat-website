@@ -1,22 +1,10 @@
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { CheckIcon, Expand } from "lucide-react";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-} from "../ui/command";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { UseFormReturn } from "react-hook-form";
 import { formSchema } from "./membership-form";
@@ -58,8 +46,7 @@ export default function StudiesField({
                   )}
                 >
                   {field.value
-                    ? studies.find((study) => study.value === field.value)
-                        ?.label
+                    ? studies.find((study) => study.value === field.value)?.label
                     : "Select studies"}
                   <Expand className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
@@ -81,9 +68,7 @@ export default function StudiesField({
                       <CheckIcon
                         className={cn(
                           "mr-2 h-4 w-4",
-                          study.value === field.value
-                            ? "opacity-100"
-                            : "opacity-0",
+                          study.value === field.value ? "opacity-100" : "opacity-0",
                         )}
                       />
                       {study.label}

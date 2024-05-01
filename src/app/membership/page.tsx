@@ -5,8 +5,8 @@ export default function page() {
     <section className="mx-auto max-w-screen-lg gap-6 flex flex-col pt-16">
       <h1 className="text-4xl font-bold">Membership</h1>
       <p>
-        You’ve decided you want to join us? Awesome, we’re happy to hear that!
-        Just fill out our online application form and you’re ready to go.
+        You’ve decided you want to join us? Awesome, we’re happy to hear that! Just fill out our
+        online application form and you’re ready to go.
       </p>
       {/* <MembershipForm /> */}
       <div>

@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"yarn:next:dev\" \"yarn:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "next:dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@prismicio/client": "^7.4.1",
+    "@prismicio/next": "^1.5.0",
+    "@prismicio/react": "^2.7.4",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
@@ -31,7 +36,6 @@
     "lucide-react": "^0.284.0",
     "next": "^14.1.0",
     "next-themes": "^0.2.1",
-    "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-day-picker": "^8.9.1",
     "react-dom": "^18",
@@ -44,16 +48,21 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.7.1",
+    "@slicemachine/adapter-next": "^0.3.38",
+    "@tailwindcss/typography": "^0.5.12",
     "@types/node": "20.8.9",
     "@types/react": "18.2.32",
     "@types/react-dom": "^18",
     "@types/validator": "^13.11.5",
     "autoprefixer": "^10",
+    "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "postcss": "^8",
+    "slice-machine-ui": "^1.26.0",
     "tailwindcss": "^3",
     "typescript": "5.2.2"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.1.1"
 }

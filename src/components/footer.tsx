@@ -11,37 +11,25 @@ export default function Footer() {
       <div className="flex">
         <Link
           href="/imprint"
-          className={cn(
-            buttonVariants({ variant: "link" }),
-            "text-secondary-foreground",
-          )}
+          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
         >
           Imprint
         </Link>
         <Link
           href="/"
-          className={cn(
-            buttonVariants({ variant: "link" }),
-            "text-secondary-foreground",
-          )}
+          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
         >
           Privacy Policy
         </Link>
         <Link
           href="/"
-          className={cn(
-            buttonVariants({ variant: "link" }),
-            "text-secondary-foreground",
-          )}
+          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
         >
           Disclaimer
         </Link>
         <Link
           href="/"
-          className={cn(
-            buttonVariants({ variant: "link" }),
-            "text-secondary-foreground",
-          )}
+          className={cn(buttonVariants({ variant: "link" }), "text-secondary-foreground")}
         >
           Cookie Directive (EU)
         </Link>

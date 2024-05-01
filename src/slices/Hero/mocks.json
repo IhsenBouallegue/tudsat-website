@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "TU Darmstadt Space Technology e.V."
+			},
+			"body": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "We are dedicated to the development of space technology and the promotion of space-related research and education. The members of the association work on various projects related to space technology, including the development of satellites, rockets, and other space-related technologies.\n"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

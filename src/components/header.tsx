@@ -12,10 +12,7 @@ export default function Header() {
         <nav>
           <Link
             href="/membership"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "sm" }),
-              "px-4",
-            )}
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "px-4")}
           >
             Membership
           </Link>

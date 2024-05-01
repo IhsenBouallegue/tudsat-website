@@ -2,15 +2,15 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
     fontFamily: {
-      'display': ['Orbitron'],
-      'body': ['"Jakarta Plus Sans"'],
+      display: ["Orbitron"],
+      body: ['"Jakarta Plus Sans"'],
     },
     container: {
       center: true,
@@ -70,9 +70,9 @@ module.exports = {
           to: { height: 0 },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(-20px)' },
-          '50%': { transform: 'translateY(0)' },
-        }
+          "0%, 100%": { transform: "translateY(-20px)" },
+          "50%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -81,5 +81,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};

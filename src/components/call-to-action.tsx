@@ -12,13 +12,7 @@ export default function Example() {
           className="bg-gradient-to-r from-accent to-transparent absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
           aria-hidden="true"
         >
-          <circle
-            cx={512}
-            cy={512}
-            r={512}
-            fill="url(#gradient)"
-            fillOpacity="1"
-          />
+          <circle cx={512} cy={512} r={512} fill="url(#gradient)" fillOpacity="1" />
         </svg>
         <div className="max-w-md text-center my-32 lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -27,14 +21,10 @@ export default function Example() {
             Join our Team today.
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted">
-            If you are not sure yet, you can always join our Discord server and
-            get to know us.
+            If you are not sure yet, you can always join our Discord server and get to know us.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-            <Link
-              href="/membership"
-              className={cn(buttonVariants({ variant: "default" }))}
-            >
+            <Link href="/membership" className={cn(buttonVariants({ variant: "default" }))}>
               Join now
             </Link>
           </div>

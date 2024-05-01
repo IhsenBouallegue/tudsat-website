@@ -2,13 +2,7 @@ import React from "react";
 import { UseFormReturn } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "./membership-form";
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../ui/form";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
 
 export default function NameFields({

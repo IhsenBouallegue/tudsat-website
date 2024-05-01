@@ -1,8 +1,8 @@
 {
-    "recommendations": [
-        "bradlc.vscode-tailwindcss",
-        "formulahendry.auto-rename-tag",
-        "esbenp.prettier-vscode",
-        "eamodio.gitlens"
-    ]
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens"
+  ]
 }

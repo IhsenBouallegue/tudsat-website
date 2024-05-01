@@ -18,23 +18,11 @@ export default function Hero() {
       </div>
 
       <div className="absolute left-[10%] top-[30%] transition-all duration-1000">
-        <Image
-          className="animate-float"
-          src="/frodo.png"
-          alt="Frodo"
-          width={300}
-          height={400}
-        />
+        <Image className="animate-float" src="/frodo.png" alt="Frodo" width={300} height={400} />
       </div>
 
       <div className="absolute right-[10%] top-[50%] transition-all duration-1000">
-        <Image
-          className="animate-float"
-          src="/trace.png"
-          alt="Trace"
-          width={200}
-          height={400}
-        />
+        <Image className="animate-float" src="/trace.png" alt="Trace" width={200} height={400} />
       </div>
       <div className="mx-auto max-w-2xl pb-32 py-16 sm:py-24 lg:py-36">
         <div className="text-center">
@@ -42,11 +30,10 @@ export default function Hero() {
             TU Darmstadt Space Technology e.V.
           </h1>
           <p className="mt-6 text-lg leading-8 ">
-            We are dedicated to the development of space technology and the
-            promotion of space-related research and education. The members of
-            the association work on various projects related to space
-            technology, including the development of satellites, rockets, and
-            other space-related technologies.
+            We are dedicated to the development of space technology and the promotion of
+            space-related research and education. The members of the association work on various
+            projects related to space technology, including the development of satellites, rockets,
+            and other space-related technologies.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button>Join Now</Button>

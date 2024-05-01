@@ -2,12 +2,7 @@
 
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselApi,
-} from "./ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "./ui/carousel";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -70,9 +65,10 @@ export default function Testimonials() {
           ))}
         </CarouselContent>
         <div className="flex justify-center mt-6 gap-4">
-          {testimonials.map((_, index) => (
+          {testimonials.map((testemonial, index) => (
+            // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
             <div
-              key={index}
+              key={testemonial.name}
               onClick={() => api?.scrollTo(index)}
               className={cn(
                 "w-4 h-1 rounded-full cursor-pointer bg-primary/20 transition-all duration-1000",

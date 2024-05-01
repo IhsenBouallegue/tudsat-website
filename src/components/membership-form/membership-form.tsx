@@ -175,35 +175,26 @@ export function MembershipForm() {
             render={({ field }) => (
               <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                 <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className="space-y-2 leading-none">
                   <FormLabel>Grant of SEPA Mandate</FormLabel>
                   <FormDescription>
-                    I authorize TU Darmstadt Space Technology e.V.. (TUDSaT) to
-                    collect payments from my account by direct debit. At the
-                    same time, I instruct my credit institution to debit the
-                    payments made by TU Darmstadt Space Technology e.V. (TUDSaT)
-                    to my account by direct debit. Note: I can request a refund
-                    of the debited amount within eight weeks, beginning with the
-                    debit date. The conditions agreed with my credit institution
-                    apply. <br />
+                    I authorize TU Darmstadt Space Technology e.V.. (TUDSaT) to collect payments
+                    from my account by direct debit. At the same time, I instruct my credit
+                    institution to debit the payments made by TU Darmstadt Space Technology e.V.
+                    (TUDSaT) to my account by direct debit. Note: I can request a refund of the
+                    debited amount within eight weeks, beginning with the debit date. The conditions
+                    agreed with my credit institution apply. <br />
                     <br />
-                    The mandate issued is a basic direct debit. The unique
-                    mandate reference number will be created by TUDSaT and
-                    communicated with the first direct debit. The following data
-                    results from the application: <br />
-                    - Name of the debtor <br />
-                    - Complete address of the debtor <br />
-                    - IBAN account number of the payer <br />
-                    - BIC of the debtor&rsquo;s bank <br />
+                    The mandate issued is a basic direct debit. The unique mandate reference number
+                    will be created by TUDSaT and communicated with the first direct debit. The
+                    following data results from the application: <br />- Name of the debtor <br />-
+                    Complete address of the debtor <br />- IBAN account number of the payer <br />-
+                    BIC of the debtor&rsquo;s bank <br />
                     <br />
-                    The creditor identification number of TUDSaT is available to
-                    members. Likewise the address. The payment is made via SEPA
-                    direct debit.
+                    The creditor identification number of TUDSaT is available to members. Likewise
+                    the address. The payment is made via SEPA direct debit.
                   </FormDescription>
                 </div>
               </FormItem>
@@ -218,17 +209,14 @@ export function MembershipForm() {
             render={({ field }) => (
               <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                 <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className="space-y-2 leading-none">
                   <FormLabel>Consent to Photography</FormLabel>
                   <FormDescription>
-                    Within the scope of my membership, video, audio and
-                    photographic recordings are made in the everyday life of the
-                    association. I agree that I can be seen on these pictures.
+                    Within the scope of my membership, video, audio and photographic recordings are
+                    made in the everyday life of the association. I agree that I can be seen on
+                    these pictures.
                   </FormDescription>
                 </div>
               </FormItem>
@@ -240,28 +228,22 @@ export function MembershipForm() {
             render={({ field }) => (
               <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                 <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className="space-y-2 leading-none">
                   <FormLabel>Declaration of consent</FormLabel>
                   <FormDescription>
-                    I agree that my data will be deposited, processed and used
-                    by &quot;TU Darmstadt Space Technology e.V.&quot; for the
-                    purpose of fulfilling the contract within the scope of
-                    membership. <br />
+                    I agree that my data will be deposited, processed and used by &quot;TU Darmstadt
+                    Space Technology e.V.&quot; for the purpose of fulfilling the contract within
+                    the scope of membership. <br />
+                    <br />I have been informed that the personal data collected within the scope of
+                    the aforementioned purposes will be collected, processed, used and transmitted
+                    in compliance with the EU General Data Protection Regulation. I have been
+                    informed of my rights as a data subject. <br />
                     <br />
-                    I have been informed that the personal data collected within
-                    the scope of the aforementioned purposes will be collected,
-                    processed, used and transmitted in compliance with the EU
-                    General Data Protection Regulation. I have been informed of
-                    my rights as a data subject. <br />
-                    <br />
-                    The declaration of consent is made on a voluntary basis. I
-                    have been informed that I can revoke the declaration of
-                    consent at any time by written notification for the future.
+                    The declaration of consent is made on a voluntary basis. I have been informed
+                    that I can revoke the declaration of consent at any time by written notification
+                    for the future.
                   </FormDescription>
                 </div>
               </FormItem>
