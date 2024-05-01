@@ -8,4 +8,5 @@ export const components = {
   showcase: dynamic(() => import("./Showcase")),
   sponsors: dynamic(() => import("./Sponsors")),
   team_members: dynamic(() => import("./TeamMembers")),
+  testemonials: dynamic(() => import("./Testemonials")),
 };

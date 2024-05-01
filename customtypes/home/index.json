@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "testemonials": {
+              "type": "SharedSlice"
+            },
             "team_members": {
               "type": "SharedSlice"
             },

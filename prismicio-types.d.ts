@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | TestemonialsSlice
   | TeamMembersSlice
   | ShowcaseSlice
   | SponsorsSlice
@@ -500,6 +501,96 @@ export type TeamMembersSlice = prismic.SharedSlice<
   TeamMembersSliceVariation
 >;
 
+/**
+ * Primary content in *Testemonials → Primary*
+ */
+export interface TestemonialsSliceDefaultPrimary {
+  /**
+   * Title field in *Testemonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testemonials.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Testemonials → Items*
+ */
+export interface TestemonialsSliceDefaultItem {
+  /**
+   * Name field in *Testemonials → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testemonials.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Position field in *Testemonials → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testemonials.items[].position
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Quote field in *Testemonials → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testemonials.items[].quote
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  quote: prismic.KeyTextField;
+
+  /**
+   * Image field in *Testemonials → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testemonials.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Testemonials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestemonialsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestemonialsSliceDefaultPrimary>,
+  Simplify<TestemonialsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Testemonials*
+ */
+type TestemonialsSliceVariation = TestemonialsSliceDefault;
+
+/**
+ * Testemonials Shared Slice
+ *
+ * - **API ID**: `testemonials`
+ * - **Description**: Testemonials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestemonialsSlice = prismic.SharedSlice<
+  "testemonials",
+  TestemonialsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -540,6 +631,11 @@ declare module "@prismicio/client" {
       TeamMembersSliceDefaultItem,
       TeamMembersSliceVariation,
       TeamMembersSliceDefault,
+      TestemonialsSlice,
+      TestemonialsSliceDefaultPrimary,
+      TestemonialsSliceDefaultItem,
+      TestemonialsSliceVariation,
+      TestemonialsSliceDefault,
     };
   }
 }
