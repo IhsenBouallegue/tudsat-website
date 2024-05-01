@@ -35,7 +35,7 @@ const Testemonials = ({ slice }: TestemonialsProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative isolatepx-6 py-24 sm:py-32 lg:px-8"
+      className="relative isolate px-6 py-24 sm:py-32 lg:px-8"
     >
       <div className="backdrop-blur-sm backdrop-saturate-200 absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] rounded-xl shadow-xl shadow-primary/10 ring-2 ring-accent/90 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
       <div className="absolute bg-gradient-to-l from-primary to-transparent to-60% inset-0 -z-10 opacity-60" />
@@ -65,7 +65,7 @@ const Testemonials = ({ slice }: TestemonialsProps): JSX.Element => {
               key={testemonial.name}
               onClick={() => api?.scrollTo(index)}
               className={cn(
-                "w-4 h-1 rounded-full cursor-pointer bg-primary/20 transition-all duration-1000",
+                "w-4 h-1 rounded-full cursor-pointer bg-white/20 transition-all duration-1000",
                 index === selectedIndex && "bg-primary w-8",
               )}
             />

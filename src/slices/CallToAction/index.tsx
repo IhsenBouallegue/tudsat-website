@@ -25,11 +25,9 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
           <circle cx={512} cy={512} r={512} fill="url(#gradient)" fillOpacity="1" />
         </svg>
         <div className="max-w-md text-center my-32 lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Put Your Skills to Use.
-            <br />
-            Join our Team today.
-          </h2>
+          <div className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <PrismicRichText field={slice.primary.title} />
+          </div>
           <div className="mt-6 text-lg leading-8 text-muted">
             <PrismicRichText field={slice.primary.body} />
           </div>
