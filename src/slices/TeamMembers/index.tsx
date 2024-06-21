@@ -1,5 +1,4 @@
 import Bounded from "@/components/bounded";
-import MemberCard from "@/components/member-card";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";

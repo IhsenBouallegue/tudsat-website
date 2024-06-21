@@ -6,7 +6,6 @@ import { useSelectedLayoutSegment } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Icons } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
 import Image from "next/image";
 import { Content } from "@prismicio/client";
