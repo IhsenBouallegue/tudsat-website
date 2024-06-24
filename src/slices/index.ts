@@ -6,8 +6,10 @@ export const components = {
   article: dynamic(() => import("./Article")),
   call_to_action: dynamic(() => import("./CallToAction")),
   hero: dynamic(() => import("./Hero")),
+  projects: dynamic(() => import("./Projects")),
   showcase: dynamic(() => import("./Showcase")),
   sponsors: dynamic(() => import("./Sponsors")),
+  subsections: dynamic(() => import("./Subsections")),
   team_members: dynamic(() => import("./TeamMembers")),
   testemonials: dynamic(() => import("./Testemonials")),
 };

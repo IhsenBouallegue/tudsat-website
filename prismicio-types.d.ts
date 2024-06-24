@@ -223,7 +223,10 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type PageDocumentDataSlicesSlice = ArticleSlice;
+type PageDocumentDataSlicesSlice =
+  | SubsectionsSlice
+  | ProjectsSlice
+  | ArticleSlice;
 
 /**
  * Content for Page documents
@@ -493,6 +496,71 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Projects → Items*
+ */
+export interface ProjectsSliceDefaultItem {
+  /**
+   * Name field in *Projects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Link field in *Projects → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Image field in *Projects → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Projects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<ProjectsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Projects*
+ */
+type ProjectsSliceVariation = ProjectsSliceDefault;
+
+/**
+ * Projects Shared Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Projects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSlice = prismic.SharedSlice<
+  "projects",
+  ProjectsSliceVariation
+>;
+
+/**
  * Primary content in *Showcase → Primary*
  */
 export interface ShowcaseSliceDefaultPrimary {
@@ -670,6 +738,71 @@ type SponsorsSliceVariation = SponsorsSliceDefault;
 export type SponsorsSlice = prismic.SharedSlice<
   "sponsors",
   SponsorsSliceVariation
+>;
+
+/**
+ * Primary content in *Subsections → Items*
+ */
+export interface SubsectionsSliceDefaultItem {
+  /**
+   * Name field in *Subsections → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: subsections.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Link field in *Subsections → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: subsections.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Image field in *Subsections → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: subsections.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Subsections Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubsectionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<SubsectionsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Subsections*
+ */
+type SubsectionsSliceVariation = SubsectionsSliceDefault;
+
+/**
+ * Subsections Shared Slice
+ *
+ * - **API ID**: `subsections`
+ * - **Description**: Subsections
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubsectionsSlice = prismic.SharedSlice<
+  "subsections",
+  SubsectionsSliceVariation
 >;
 
 /**
@@ -880,6 +1013,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ProjectsSlice,
+      ProjectsSliceDefaultItem,
+      ProjectsSliceVariation,
+      ProjectsSliceDefault,
       ShowcaseSlice,
       ShowcaseSliceDefaultPrimary,
       ShowcaseSliceDefaultItem,
@@ -890,6 +1027,10 @@ declare module "@prismicio/client" {
       SponsorsSliceDefaultItem,
       SponsorsSliceVariation,
       SponsorsSliceDefault,
+      SubsectionsSlice,
+      SubsectionsSliceDefaultItem,
+      SubsectionsSliceVariation,
+      SubsectionsSliceDefault,
       TeamMembersSlice,
       TeamMembersSliceDefaultPrimary,
       TeamMembersSliceDefaultItem,
