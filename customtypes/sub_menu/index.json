@@ -1,0 +1,31 @@
+{
+  "format": "custom",
+  "id": "sub_menu",
+  "label": "Sub menu",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "sub_menu_item": {
+              "type": "SharedSlice"
+            },
+            "heading": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

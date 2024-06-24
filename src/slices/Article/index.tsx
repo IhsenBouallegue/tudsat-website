@@ -12,8 +12,16 @@ export type ArticleProps = SliceComponentProps<Content.ArticleSlice>;
  */
 const Article = ({ slice }: ArticleProps): JSX.Element => {
   return (
-    <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <article className="prose lg:prose-xl dark:prose-invert">
+    <Bounded
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+      className={`${slice.variation === "withoutPadding" && "py-0 lg:py-0 md:py-0 p-0"}`}
+    >
+      <article
+        className={`prose lg:prose-xl dark:prose-invert ${
+          slice.variation === "withoutPadding" && "py-0"
+        }`}
+      >
         <PrismicRichText field={slice.primary.content} />
       </article>
     </Bounded>

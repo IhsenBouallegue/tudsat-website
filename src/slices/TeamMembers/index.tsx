@@ -19,7 +19,7 @@ const TeamMembers = ({ slice }: TeamMembersProps): JSX.Element => {
         {slice.items.map((item) => (
           <div
             key={item.name}
-            className="w-64 h-full backdrop-blur-sm backdrop-saturate-200 rounded-lg border-2 border-primary/10"
+            className="w-64 h-full backdrop-blur-sm backdrop-saturate-200 rounded-lg ring-2 ring-accent/90"
           >
             <PrismicNextImage
               field={item.photo}

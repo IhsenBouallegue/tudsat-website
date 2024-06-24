@@ -34,19 +34,35 @@ const Sponsors = ({ slice }: SponsorsProps): JSX.Element => {
     <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold leading-8">{slice.primary.title}</h2>
-        <div className="mx-auto mt-12 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          {slice.items.map((sponsor) => (
-            <PrismicNextImage
-              key={sponsor.name}
-              field={sponsor.logo}
-              width={158}
-              height={48}
-              className="col-span-2 max-h-12 saturate-0 hover:saturate-100 w-full object-contain lg:col-span-1"
-            />
-          ))}
-        </div>
+        <SponsorGrid sponsors={slice.items} />
       </div>
     </Bounded>
+  );
+};
+
+const SponsorGrid = ({ sponsors }: { sponsors: Content.SponsorsSliceDefaultItem[] }) => {
+  return (
+    <div className="container mx-auto py-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {sponsors.map((sponsor) => (
+          <SponsorCard key={sponsor.name} sponsor={sponsor} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const SponsorCard = ({ sponsor }: { sponsor: Content.SponsorsSliceDefaultItem }) => {
+  return (
+    <div className="p-4 flex items-center justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-accent/90">
+      <PrismicNextImage
+        key={sponsor.name}
+        field={sponsor.logo}
+        width={258}
+        height={28}
+        className="saturate-0 hover:saturate-100 object-contain h-12 w-32"
+      />
+    </div>
   );
 };
 
