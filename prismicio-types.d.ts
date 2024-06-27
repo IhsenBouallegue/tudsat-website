@@ -269,6 +269,8 @@ export type LayoutDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SponsorsSlice
+  | InfoGridSlice
   | SubsectionsSlice
   | ProjectsSlice
   | ArticleSlice;
@@ -361,6 +363,92 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Sponsors → Sponsors*
+ */
+export interface SponsorsDocumentDataSponsorsItem {
+  /**
+   * Name field in *Sponsors → Sponsors*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sponsors.sponsors[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Highlight field in *Sponsors → Sponsors*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: sponsors.sponsors[].highlight
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  highlight: prismic.BooleanField;
+
+  /**
+   * Category field in *Sponsors → Sponsors*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: TUDSaT Sponsors
+   * - **API ID Path**: sponsors.sponsors[].category
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<
+    | "TUDSaT Sponsors"
+    | "TRACE Prime Sponsor"
+    | "TRACE Sponsors"
+    | "RAPID Prime Sponsor"
+    | "RAPID Sponsors",
+    "filled"
+  >;
+
+  /**
+   * Logo field in *Sponsors → Sponsors*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sponsors.sponsors[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Content for Sponsors documents
+ */
+interface SponsorsDocumentData {
+  /**
+   * Sponsors field in *Sponsors*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sponsors.sponsors[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  sponsors: prismic.GroupField<Simplify<SponsorsDocumentDataSponsorsItem>>;
+}
+
+/**
+ * Sponsors document from Prismic
+ *
+ * - **API ID**: `sponsors`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SponsorsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SponsorsDocumentData>,
+    "sponsors",
+    Lang
+  >;
+
 type SubMenuDocumentDataSlicesSlice = SubMenuItemSlice | HeadingSlice;
 
 /**
@@ -402,18 +490,19 @@ export type AllDocumentTypes =
   | LayoutDocument
   | PageDocument
   | SettingsDocument
+  | SponsorsDocument
   | SubMenuDocument;
 
 /**
- * Primary content in *Article → Primary*
+ * Primary content in *Article → Default → Primary*
  */
 export interface ArticleSliceDefaultPrimary {
   /**
-   * content field in *Article → Primary*
+   * content field in *Article → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.content
+   * - **API ID Path**: article.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -433,15 +522,15 @@ export type ArticleSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Article → Primary*
+ * Primary content in *Article → WithoutPadding → Primary*
  */
 export interface ArticleSliceWithoutPaddingPrimary {
   /**
-   * content field in *Article → Primary*
+   * content field in *Article → WithoutPadding → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.content
+   * - **API ID Path**: article.withoutPadding.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -478,45 +567,45 @@ export type ArticleSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *CallToAction → Primary*
+ * Primary content in *CallToAction → Default → Primary*
  */
 export interface CallToActionSliceDefaultPrimary {
   /**
-   * Title field in *CallToAction → Primary*
+   * Title field in *CallToAction → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.primary.title
+   * - **API ID Path**: call_to_action.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
 
   /**
-   * Body field in *CallToAction → Primary*
+   * Body field in *CallToAction → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.primary.body
+   * - **API ID Path**: call_to_action.default.primary.body
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body: prismic.RichTextField;
 
   /**
-   * Call To Action Label field in *CallToAction → Primary*
+   * Call To Action Label field in *CallToAction → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.primary.call_to_action_label
+   * - **API ID Path**: call_to_action.default.primary.call_to_action_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   call_to_action_label: prismic.KeyTextField;
 
   /**
-   * Call To Action Link field in *CallToAction → Primary*
+   * Call To Action Link field in *CallToAction → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.primary.call_to_action_link
+   * - **API ID Path**: call_to_action.default.primary.call_to_action_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   call_to_action_link: prismic.LinkField;
@@ -553,15 +642,15 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Heading → Primary*
+ * Primary content in *Heading → Default → Primary*
  */
 export interface HeadingSliceDefaultPrimary {
   /**
-   * Heading field in *Heading → Primary*
+   * Heading field in *Heading → Default → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: heading.primary.heading
+   * - **API ID Path**: heading.default.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.TitleField;
@@ -598,25 +687,25 @@ export type HeadingSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Heading field in *Hero → Primary*
+   * Heading field in *Hero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.heading
+   * - **API ID Path**: hero.default.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
 
   /**
-   * Body field in *Hero → Primary*
+   * Body field in *Hero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.body
+   * - **API ID Path**: hero.default.primary.body
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   body: prismic.KeyTextField;
@@ -650,25 +739,105 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Primary content in *MenuItem → Primary*
+ * Primary content in *InfoGrid → Default → Primary*
  */
-export interface MenuItemSliceDefaultPrimary {
+export interface InfoGridSliceDefaultPrimary {
   /**
-   * Label field in *MenuItem → Primary*
+   * Title field in *InfoGrid → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.label
+   * - **API ID Path**: info_grid.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *InfoGrid → Items*
+ */
+export interface InfoGridSliceDefaultItem {
+  /**
+   * Title field in *InfoGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_grid.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *InfoGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_grid.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Icon field in *InfoGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_grid.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  icon: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for InfoGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InfoGridSliceDefaultPrimary>,
+  Simplify<InfoGridSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *InfoGrid*
+ */
+type InfoGridSliceVariation = InfoGridSliceDefault;
+
+/**
+ * InfoGrid Shared Slice
+ *
+ * - **API ID**: `info_grid`
+ * - **Description**: InfoGrid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoGridSlice = prismic.SharedSlice<
+  "info_grid",
+  InfoGridSliceVariation
+>;
+
+/**
+ * Primary content in *MenuItem → Default → Primary*
+ */
+export interface MenuItemSliceDefaultPrimary {
+  /**
+   * Label field in *MenuItem → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.default.primary.label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 
   /**
-   * Link field in *MenuItem → Primary*
+   * Link field in *MenuItem → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.link
+   * - **API ID Path**: menu_item.default.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
@@ -688,25 +857,25 @@ export type MenuItemSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *MenuItem → Primary*
+ * Primary content in *MenuItem → With sub menu → Primary*
  */
 export interface MenuItemSliceWithSubMenuPrimary {
   /**
-   * Label field in *MenuItem → Primary*
+   * Label field in *MenuItem → With sub menu → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.label
+   * - **API ID Path**: menu_item.withSubMenu.primary.label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 
   /**
-   * Sub menu field in *MenuItem → Primary*
+   * Sub menu field in *MenuItem → With sub menu → Primary*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.sub_menu
+   * - **API ID Path**: menu_item.withSubMenu.primary.sub_menu
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   sub_menu: prismic.ContentRelationshipField<"sub_menu">;
@@ -808,15 +977,15 @@ export type ProjectsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Showcase → Primary*
+ * Primary content in *Showcase → Default → Primary*
  */
 export interface ShowcaseSliceDefaultPrimary {
   /**
-   * Title field in *Showcase → Primary*
+   * Title field in *Showcase → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: showcase.primary.title
+   * - **API ID Path**: showcase.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
@@ -918,43 +1087,28 @@ export type ShowcaseSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Sponsors → Primary*
+ * Primary content in *Sponsors → Default → Primary*
  */
 export interface SponsorsSliceDefaultPrimary {
   /**
-   * Title field in *Sponsors → Primary*
+   * Title field in *Sponsors → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Thanks to these fine folks for helping TUDSaT thrive
-   * - **API ID Path**: sponsors.primary.title
+   * - **API ID Path**: sponsors.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Sponsors → Items*
- */
-export interface SponsorsSliceDefaultItem {
-  /**
-   * Name field in *Sponsors → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: sponsors.items[].name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
 
   /**
-   * logo field in *Sponsors → Items*
+   * Sponsors Page field in *Sponsors → Default → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: sponsors.items[].logo
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: sponsors.default.primary.sponsors_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  logo: prismic.ImageField<never>;
+  sponsors_page: prismic.LinkField;
 }
 
 /**
@@ -967,13 +1121,26 @@ export interface SponsorsSliceDefaultItem {
 export type SponsorsSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<SponsorsSliceDefaultPrimary>,
-  Simplify<SponsorsSliceDefaultItem>
+  never
+>;
+
+/**
+ * Full variation for Sponsors Slice
+ *
+ * - **API ID**: `full`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SponsorsSliceFull = prismic.SharedSliceVariation<
+  "full",
+  Record<string, never>,
+  never
 >;
 
 /**
  * Slice variation for *Sponsors*
  */
-type SponsorsSliceVariation = SponsorsSliceDefault;
+type SponsorsSliceVariation = SponsorsSliceDefault | SponsorsSliceFull;
 
 /**
  * Sponsors Shared Slice
@@ -988,25 +1155,25 @@ export type SponsorsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *SubMenuItem → Primary*
+ * Primary content in *SubMenuItem → Default → Primary*
  */
 export interface SubMenuItemSliceDefaultPrimary {
   /**
-   * Label field in *SubMenuItem → Primary*
+   * Label field in *SubMenuItem → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: sub_menu_item.primary.label
+   * - **API ID Path**: sub_menu_item.default.primary.label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 
   /**
-   * Link field in *SubMenuItem → Primary*
+   * Link field in *SubMenuItem → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: sub_menu_item.primary.link
+   * - **API ID Path**: sub_menu_item.default.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
@@ -1108,15 +1275,15 @@ export type SubsectionsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *TeamMembers → Primary*
+ * Primary content in *TeamMembers → Default → Primary*
  */
 export interface TeamMembersSliceDefaultPrimary {
   /**
-   * Title field in *TeamMembers → Primary*
+   * Title field in *TeamMembers → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: team_members.primary.title
+   * - **API ID Path**: team_members.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
@@ -1145,6 +1312,16 @@ export interface TeamMembersSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   position: prismic.KeyTextField;
+
+  /**
+   * email field in *TeamMembers → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.items[].email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
 
   /**
    * Photo field in *TeamMembers → Items*
@@ -1188,15 +1365,15 @@ export type TeamMembersSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Testemonials → Primary*
+ * Primary content in *Testemonials → Default → Primary*
  */
 export interface TestemonialsSliceDefaultPrimary {
   /**
-   * Title field in *Testemonials → Primary*
+   * Title field in *Testemonials → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testemonials.primary.title
+   * - **API ID Path**: testemonials.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
@@ -1306,6 +1483,9 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      SponsorsDocument,
+      SponsorsDocumentData,
+      SponsorsDocumentDataSponsorsItem,
       SubMenuDocument,
       SubMenuDocumentData,
       SubMenuDocumentDataSlicesSlice,
@@ -1328,6 +1508,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      InfoGridSlice,
+      InfoGridSliceDefaultPrimary,
+      InfoGridSliceDefaultItem,
+      InfoGridSliceVariation,
+      InfoGridSliceDefault,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceWithSubMenuPrimary,
@@ -1345,9 +1530,9 @@ declare module "@prismicio/client" {
       ShowcaseSliceDefault,
       SponsorsSlice,
       SponsorsSliceDefaultPrimary,
-      SponsorsSliceDefaultItem,
       SponsorsSliceVariation,
       SponsorsSliceDefault,
+      SponsorsSliceFull,
       SubMenuItemSlice,
       SubMenuItemSliceDefaultPrimary,
       SubMenuItemSliceVariation,

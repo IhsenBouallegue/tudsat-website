@@ -12,7 +12,9 @@ export default function SliceSimulatorPage({ searchParams }: SliceSimulatorParam
 
   return (
     <SliceSimulator>
-      <SliceZone slices={slices} components={components} />
+      <div className="bg-background">
+        <SliceZone slices={slices} components={components} />
+      </div>
     </SliceSimulator>
   );
 }

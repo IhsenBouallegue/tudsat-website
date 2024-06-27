@@ -27,6 +27,7 @@ import {
   Instagram,
   Youtube,
   Linkedin,
+  Mail,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -75,4 +76,19 @@ export const Icons = {
   instagram: Instagram,
   youtube: Youtube,
   linkedin: Linkedin,
+  mail: Mail,
+};
+
+interface IconProps extends LucideProps {
+  name: keyof typeof Icons;
+}
+
+export const RenderIcon = ({ name, ...props }: IconProps) => {
+  const IconComponent = Icons[name];
+
+  if (!IconComponent) {
+    return null;
+  }
+
+  return <IconComponent {...props} />;
 };

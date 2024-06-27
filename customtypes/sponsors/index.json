@@ -1,0 +1,59 @@
+{
+  "format": "custom",
+  "id": "sponsors",
+  "label": "Sponsors",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "sponsors": {
+        "type": "Group",
+        "config": {
+          "label": "Sponsors",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "highlight": {
+              "type": "Boolean",
+              "config": {
+                "label": "Highlight",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
+              }
+            },
+            "category": {
+              "type": "Select",
+              "config": {
+                "label": "Category",
+                "placeholder": "",
+                "options": [
+                  "TUDSaT Sponsors",
+                  "TRACE Prime Sponsor",
+                  "TRACE Sponsors",
+                  "RAPID Prime Sponsor",
+                  "RAPID Sponsors"
+                ],
+                "default_value": "TUDSaT Sponsors"
+              }
+            },
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "Logo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

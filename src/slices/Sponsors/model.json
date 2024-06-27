@@ -18,25 +18,26 @@
             "label": "Title",
             "placeholder": "Thanks to these fine folks for helping TUDSaT thrive"
           }
-        }
-      },
-      "items": {
-        "name": {
-          "type": "Text",
-          "config": {
-            "label": "Name",
-            "placeholder": ""
-          }
         },
-        "logo": {
-          "type": "Image",
+        "sponsors_page": {
+          "type": "Link",
           "config": {
-            "label": "logo",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Sponsors Page",
+            "placeholder": "",
+            "select": null
           }
         }
       }
+    },
+    {
+      "id": "full",
+      "name": "Full",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
     }
   ]
 }

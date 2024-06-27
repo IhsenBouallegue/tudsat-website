@@ -31,11 +31,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(orbitron.variable, plusJakartaSans.variable, "bg-background")}>
+      <body
+        className={cn(
+          orbitron.variable,
+          plusJakartaSans.variable,
+          "bg-background min-h-screen flex flex-col",
+        )}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <StarrySkyCanvas />
           <Header />
-          {children}
+          <main className="flex flex-1 flex-col items-center">{children}</main>
           <Footer />
         </ThemeProvider>
         <PrismicPreview repositoryName={repositoryName} />

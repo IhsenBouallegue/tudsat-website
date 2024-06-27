@@ -15,7 +15,11 @@ export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
  */
 const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
   return (
-    <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+    <Bounded
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+      withExtraPadding
+    >
       <div className="relative isolate backdrop-blur-sm backdrop-saturate-200 shadow-xl shadow-primary/10 ring-2 ring-accent/90 overflow-hidden px-6 pt-16 flex flex-col rounded-3xl sm:px-64 md:pt-64 lg:gap-x-60 lg:px-24 lg:pt-0 lg:flex-row">
         <svg
           viewBox="0 0 1024 1024"

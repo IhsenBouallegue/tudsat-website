@@ -7,6 +7,7 @@ export const components = {
   call_to_action: dynamic(() => import("./CallToAction")),
   heading: dynamic(() => import("./Heading")),
   hero: dynamic(() => import("./Hero")),
+  info_grid: dynamic(() => import("./InfoGrid")),
   menu_item: dynamic(() => import("./MenuItem")),
   projects: dynamic(() => import("./Projects")),
   showcase: dynamic(() => import("./Showcase")),

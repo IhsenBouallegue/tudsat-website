@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
-    "@slicemachine/adapter-next": "^0.3.38",
+    "@slicemachine/adapter-next": "^0.3.42",
     "@tailwindcss/typography": "^0.5.12",
     "@types/node": "20.8.9",
     "@types/react": "18.2.32",
@@ -61,7 +61,7 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "postcss": "^8",
-    "slice-machine-ui": "^1.26.0",
+    "slice-machine-ui": "^2.2.1",
     "tailwindcss": "^3",
     "typescript": "5.2.2"
   },

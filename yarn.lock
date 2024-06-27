@@ -678,18 +678,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/api-renderer@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@prismicio/api-renderer@npm:1.0.0"
+"@prismicio/api-renderer@npm:3.2.1":
+  version: 3.2.1
+  resolution: "@prismicio/api-renderer@npm:3.2.1"
   dependencies:
-    "@prismicio/types-internal": "npm:^1.0.1"
-    tslib: "npm:^2.3.1"
-    uuid: "npm:^8.3.2"
+    "@prismicio/types-internal": "npm:2.6.0"
+    tslib: "npm:^2.5.0"
+    uuid: "npm:^9.0.0"
   peerDependencies:
     fp-ts: ^2.11.8
     io-ts: ^2.2.16
     io-ts-types: ^0.5.16
-  checksum: 10c0/b77bed6053366dea8876515893da845a4af432677521641e8f673f27bb2cef2aac50adf5aa4e0ff02ac0ba62164011192ad4fc1ee0c52053d93baf6fa1fa1c65
+  checksum: 10c0/137c4d734629dd2c8e0250e9ab3fb6af492e5c0d3c4d7f2a86a9494eaa0d6086c0cc54c24c7d042978795e3b9ce064a4fd4de37cd40d333178b3ea84a89075c8
   languageName: node
   linkType: hard
 
@@ -702,7 +702,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/custom-types-client@npm:^1.1.0, @prismicio/custom-types-client@npm:^1.2.0":
+"@prismicio/client@npm:^7.5.0":
+  version: 7.6.0
+  resolution: "@prismicio/client@npm:7.6.0"
+  dependencies:
+    imgix-url-builder: "npm:^0.0.4"
+  checksum: 10c0/3cb163ff73fb7cd358ab8580663f601e9ff51e862edf3caf6fa8e6bf12e4bb643a21caff7ea855150702cc8b491192b38b2d9ba103c8fc05a5b5597e9dd004ed
+  languageName: node
+  linkType: hard
+
+"@prismicio/custom-types-client@npm:1.3.1, @prismicio/custom-types-client@npm:^1.1.0":
   version: 1.3.1
   resolution: "@prismicio/custom-types-client@npm:1.3.1"
   peerDependencies:
@@ -711,12 +720,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/mocks@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@prismicio/mocks@npm:2.0.0"
+"@prismicio/mocks@npm:^2.2.0":
+  version: 2.3.1
+  resolution: "@prismicio/mocks@npm:2.3.1"
   dependencies:
-    "@prismicio/api-renderer": "npm:1.0.0"
-    "@prismicio/types-internal": "npm:2.0.0-alpha.8"
+    "@prismicio/api-renderer": "npm:3.2.1"
+    "@prismicio/types-internal": "npm:2.6.0"
     fp-ts: "npm:^2.11.8"
     io-ts: "npm:^2.2.16"
     io-ts-types: "npm:^0.5.16"
@@ -724,26 +733,8 @@ __metadata:
     monocle-ts: "npm:^2.3.11"
     newtype-ts: "npm:^0.3.5"
     tslib: "npm:^2.3.1"
-    uuid: "npm:^8.3.2"
-  checksum: 10c0/86deb0ef3e502227fa00f39f68365c7a805a9c56297234b7251b3ea814b2e7feeb2b83517540ceb2ff1afac8a3cc954a28a2270e7ae13aad6399aed74f668c78
-  languageName: node
-  linkType: hard
-
-"@prismicio/mocks@npm:^2.0.0-alpha.2":
-  version: 2.1.1
-  resolution: "@prismicio/mocks@npm:2.1.1"
-  dependencies:
-    "@prismicio/api-renderer": "npm:1.0.0"
-    "@prismicio/types-internal": "npm:2.0.0-alpha.8"
-    fp-ts: "npm:^2.11.8"
-    io-ts: "npm:^2.2.16"
-    io-ts-types: "npm:^0.5.16"
-    lorem-ipsum: "npm:^2.0.4"
-    monocle-ts: "npm:^2.3.11"
-    newtype-ts: "npm:^0.3.5"
-    tslib: "npm:^2.3.1"
-    uuid: "npm:^8.3.2"
-  checksum: 10c0/1f1ab16a7a2142786a8c3237de826817b0427e9db44cf610b9d89b9437b6050cb0b7de6d5ae5e899be85233c189f8673035d89fbe74357e583c62b94cd749354
+    uuid: "npm:^9.0.1"
+  checksum: 10c0/1e384cb0c6029d2a4920795882cf1c9e3136d610c4ee2456e8a7cdd00b141691a33e3514860da5524b1de6fb1e432348807fa17a64f8ff832108bf478c0e70dc
   languageName: node
   linkType: hard
 
@@ -794,39 +785,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/types-internal@npm:2.0.0-alpha.8":
-  version: 2.0.0-alpha.8
-  resolution: "@prismicio/types-internal@npm:2.0.0-alpha.8"
-  dependencies:
-    monocle-ts: "npm:^2.3.11"
-    newtype-ts: "npm:^0.3.5"
-    tslib: "npm:^2.3.1"
-  peerDependencies:
-    fp-ts: ^2.11.8
-    io-ts: ^2.2.16
-    io-ts-types: ^0.5.16
-  checksum: 10c0/872f7bf7e95640957df0e322b76e917cc74c632191a537bf1de2890c2017c1c85fdf45876a2b32055ab07b4b2ece27b21f785edae9fd2e6dbcccfaabca5570a7
-  languageName: node
-  linkType: hard
-
-"@prismicio/types-internal@npm:^1.0.1":
-  version: 1.5.3
-  resolution: "@prismicio/types-internal@npm:1.5.3"
-  dependencies:
-    monocle-ts: "npm:^2.3.11"
-    newtype-ts: "npm:^0.3.5"
-    tslib: "npm:^2.3.1"
-  peerDependencies:
-    fp-ts: ^2.11.8
-    io-ts: ^2.2.16
-    io-ts-types: ^0.5.16
-  checksum: 10c0/51acd19426dea66493bd1793844ab164cbd045550b7bd52077b32de7a920b7777d2c20d3f7882b1d6f9197b9dfbfc95b5adf2e5f013a0bb158ba63fabc441fd5
-  languageName: node
-  linkType: hard
-
-"@prismicio/types-internal@npm:^2.2.0":
-  version: 2.3.1
-  resolution: "@prismicio/types-internal@npm:2.3.1"
+"@prismicio/types-internal@npm:2.6.0, @prismicio/types-internal@npm:^2.4.1":
+  version: 2.6.0
+  resolution: "@prismicio/types-internal@npm:2.6.0"
   dependencies:
     monocle-ts: "npm:^2.3.11"
     newtype-ts: "npm:^0.3.5"
@@ -837,7 +798,7 @@ __metadata:
     io-ts: ^2.2.16
     io-ts-types: ^0.5.16
     uuid: ^9.0.0
-  checksum: 10c0/1292fc9e55c7de67dc29d2f4f1f3f27480670b3d22e117aad10fb1cbc648325eaaffcfdcefa5aad9c83dd6025dd54d7bfbec33336e6560673e514f034478294e
+  checksum: 10c0/95bec3fba5a0aef430e51afddd8bbf2ee9b90011933bec3e79b5d572afe9f56bf6101ae3e0900d4e4c4237a3d6071cb1ff926611fbd5e3b5e5ea98dcaaa0c6d2
   languageName: node
   linkType: hard
 
@@ -1877,13 +1838,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slicemachine/adapter-next@npm:^0.3.38":
-  version: 0.3.38
-  resolution: "@slicemachine/adapter-next@npm:0.3.38"
+"@slicemachine/adapter-next@npm:^0.3.42":
+  version: 0.3.42
+  resolution: "@slicemachine/adapter-next@npm:0.3.42"
   dependencies:
     "@prismicio/simulator": "npm:^0.1.4"
-    "@prismicio/types-internal": "npm:^2.2.0"
-    "@slicemachine/plugin-kit": "npm:0.4.38"
+    "@prismicio/types-internal": "npm:^2.4.1"
+    "@slicemachine/plugin-kit": "npm:0.4.42"
     common-tags: "npm:^1.8.2"
     fp-ts: "npm:^2.13.1"
     io-ts: "npm:^2.2.20"
@@ -1892,24 +1853,24 @@ __metadata:
     monocle-ts: "npm:^2.3.13"
     newtype-ts: "npm:^0.3.5"
     pascal-case: "npm:^3.1.2"
-    prismic-ts-codegen: "npm:^0.1.17"
   peerDependencies:
-    next: ">=11.0.0"
-    react: ^17 || ^18
-  checksum: 10c0/df07f50f7a394805d5d48c29a9e0a3ec16c36dac82846ec2f8f91e0e21783d4f76d03e4f245e670477d6accb2bce681ce42f455c64add8c00b4fdf58333525ec
+    next: ^11 || ^12 || ^13 || ^14 || ^15.0.0-rc.0
+    react: ^17 || ^18 || ^19.0.0-rc.0
+  checksum: 10c0/e3032c6f974a019965823855c874cb0000d0cee982bdad5fcb471146adaf294607608275a471588505096e3940eeb965ff8ac5d5ed8a8c62c4b92abc546ed747
   languageName: node
   linkType: hard
 
-"@slicemachine/manager@npm:0.18.3":
-  version: 0.18.3
-  resolution: "@slicemachine/manager@npm:0.18.3"
+"@slicemachine/manager@npm:0.19.3":
+  version: 0.19.3
+  resolution: "@slicemachine/manager@npm:0.19.3"
   dependencies:
     "@antfu/ni": "npm:^0.20.0"
-    "@prismicio/custom-types-client": "npm:^1.2.0"
-    "@prismicio/mocks": "npm:2.0.0"
-    "@prismicio/types-internal": "npm:^2.2.0"
+    "@prismicio/client": "npm:^7.5.0"
+    "@prismicio/custom-types-client": "npm:1.3.1"
+    "@prismicio/mocks": "npm:^2.2.0"
+    "@prismicio/types-internal": "npm:^2.4.1"
     "@segment/analytics-node": "npm:1.1.3"
-    "@slicemachine/plugin-kit": "npm:0.4.38"
+    "@slicemachine/plugin-kit": "npm:0.4.42"
     cookie: "npm:^0.5.0"
     cors: "npm:^2.8.5"
     execa: "npm:^7.1.1"
@@ -1933,14 +1894,15 @@ __metadata:
   peerDependenciesMeta:
     msw:
       optional: true
-  checksum: 10c0/04bdf6149d8ce8acb3ad14c9525675ecbd9ededdf66b77e84376d3c154e1d3f135287002edb800289600be54795dc9fbe039bd4aa615795b6eb567037bb33758
+  checksum: 10c0/67e2a9f90f59a8346431948610e283d36a881c85f38513ce48a6f1ee286b5fc51acc964465c14e8c7b0823fe0bd664b469acf1d2467c559cd6d768f9760fe884
   languageName: node
   linkType: hard
 
-"@slicemachine/plugin-kit@npm:0.4.38":
-  version: 0.4.38
-  resolution: "@slicemachine/plugin-kit@npm:0.4.38"
+"@slicemachine/plugin-kit@npm:0.4.42":
+  version: 0.4.42
+  resolution: "@slicemachine/plugin-kit@npm:0.4.42"
   dependencies:
+    "@prismicio/client": "npm:^7.5.0"
     common-tags: "npm:^1.8.2"
     defu: "npm:^6.1.2"
     dotenv: "npm:16.3.1"
@@ -1950,8 +1912,8 @@ __metadata:
     io-ts-reporters: "npm:^2.0.1"
     p-limit: "npm:^4.0.0"
     prettier: "npm:^3.0.3"
-    prismic-ts-codegen: "npm:^0.1.19"
-  checksum: 10c0/d8e0262058b53afba3126300fd08c8b9c0f5d9d02e3418b83dfa6fdd740bc372e2cdc5ca4448631a5cda27896efc41a29630340ce0a11a0567ff2fc781661680
+    prismic-ts-codegen: "npm:^0.1.20"
+  checksum: 10c0/95537df8f08fcce6bd2df157064077516327356cbfac5b8573c85dd9b81137e4ee6a4df1a22db3f8370cd5f2a60206fa211f9fca588d5afbd92b1588cc4dfbe2
   languageName: node
   linkType: hard
 
@@ -6123,9 +6085,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismic-ts-codegen@npm:^0.1.17, prismic-ts-codegen@npm:^0.1.19":
-  version: 0.1.19
-  resolution: "prismic-ts-codegen@npm:0.1.19"
+"prismic-ts-codegen@npm:^0.1.20":
+  version: 0.1.21
+  resolution: "prismic-ts-codegen@npm:0.1.21"
   dependencies:
     "@prismicio/custom-types-client": "npm:^1.1.0"
     common-tags: "npm:^1.8.2"
@@ -6146,7 +6108,7 @@ __metadata:
       optional: true
   bin:
     prismic-ts-codegen: bin/prismic-ts-codegen.js
-  checksum: 10c0/7013c1de21fadfa7455938f256aba0dfe13474d788199cda2c5f2098d4ce3a73890b3a08d89848853e02da88951aff37261becc9c7a619ea3ff9464d36232527
+  checksum: 10c0/4e6c86598f7196b882b4d70c44e47fd362f77168ecced523d7e4522babccb9ae0a18e84622246feb05a72e7cd48c610f7d7750c3e358d622bcba6a27008ef12d
   languageName: node
   linkType: hard
 
@@ -6906,16 +6868,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"slice-machine-ui@npm:^1.26.0":
-  version: 1.26.0
-  resolution: "slice-machine-ui@npm:1.26.0"
+"slice-machine-ui@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "slice-machine-ui@npm:2.2.1"
   dependencies:
     "@radix-ui/react-visually-hidden": "npm:1.0.3"
-    "@slicemachine/manager": "npm:0.18.3"
-    start-slicemachine: "npm:0.12.18"
+    "@slicemachine/manager": "npm:0.19.3"
+    start-slicemachine: "npm:0.12.22"
   bin:
     start-slicemachine: ./bin/start-slicemachine.cjs
-  checksum: 10c0/b2dae2c61623983cdfe5a4b64696af66334fd01774ca817402f7f1837695fb8c7afb1c8723b1b5c5561bc8a55d97bfaae6dce0642b7954a456d119a6da755f8a
+  checksum: 10c0/b9ec08f85e61cffc2d713969b5c963e79650b80d49b1f088d8f0f0330db722a8ce361ee1ebdf92be08c523e2cfd081d4150b12b8c0ecf979144d1ddbe8ee7a27
   languageName: node
   linkType: hard
 
@@ -6970,13 +6932,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-slicemachine@npm:0.12.18":
-  version: 0.12.18
-  resolution: "start-slicemachine@npm:0.12.18"
+"start-slicemachine@npm:0.12.22":
+  version: 0.12.22
+  resolution: "start-slicemachine@npm:0.12.22"
   dependencies:
-    "@prismicio/mocks": "npm:^2.0.0-alpha.2"
-    "@prismicio/types-internal": "npm:^2.2.0"
-    "@slicemachine/manager": "npm:0.18.3"
+    "@prismicio/mocks": "npm:^2.2.0"
+    "@prismicio/types-internal": "npm:^2.4.1"
+    "@slicemachine/manager": "npm:0.19.3"
     body-parser: "npm:^1.20.2"
     chalk: "npm:^4.1.2"
     cors: "npm:^2.8.5"
@@ -6993,7 +6955,7 @@ __metadata:
     serve-static: "npm:^1.15.0"
   bin:
     start-slicemachine: ./bin/start-slicemachine.js
-  checksum: 10c0/bbd9bc8b155b345e71be3a9733229fc629f53300fc67eb75adf0a48494008d976d2481bb34410afb8bb683c3a1248ba7c2f466bee47f8a1a3f73ecd21fc6349c
+  checksum: 10c0/61152461e588c1a6ae177e7ca6f9754c4dcba5c6ca8f5f5acaef87fb342c7c7be8c2f0ed2001d1d73f3d6ea04352a51e85c130048cb86f827dd2287f18913763
   languageName: node
   linkType: hard
 
@@ -7457,6 +7419,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.5.0":
+  version: 2.6.3
+  resolution: "tslib@npm:2.6.3"
+  checksum: 10c0/2598aef53d9dbe711af75522464b2104724d6467b26a60f2bdac8297d2b5f1f6b86a71f61717384aa8fd897240467aaa7bcc36a0700a0faf751293d1331db39a
+  languageName: node
+  linkType: hard
+
 "tudsat@workspace:.":
   version: 0.0.0-use.local
   resolution: "tudsat@workspace:."
@@ -7475,7 +7444,7 @@ __metadata:
     "@radix-ui/react-toast": "npm:^1.1.5"
     "@react-three/drei": "npm:^9.88.7"
     "@react-three/fiber": "npm:^8.15.8"
-    "@slicemachine/adapter-next": "npm:^0.3.38"
+    "@slicemachine/adapter-next": "npm:^0.3.42"
     "@tailwindcss/typography": "npm:^0.5.12"
     "@types/node": "npm:20.8.9"
     "@types/react": "npm:18.2.32"
@@ -7502,7 +7471,7 @@ __metadata:
     react-dom: "npm:^18"
     react-hook-form: "npm:^7.47.0"
     sharp: "npm:^0.33.2"
-    slice-machine-ui: "npm:^1.26.0"
+    slice-machine-ui: "npm:^2.2.1"
     tailwind-merge: "npm:^1.14.0"
     tailwindcss: "npm:^3"
     tailwindcss-animate: "npm:^1.0.7"
@@ -7777,16 +7746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^8.3.2":
-  version: 8.3.2
-  resolution: "uuid@npm:8.3.2"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 10c0/bcbb807a917d374a49f475fae2e87fdca7da5e5530820ef53f65ba1d12131bd81a92ecf259cc7ce317cbe0f289e7d79fdfebcef9bfa3087c8c8a2fa304c9be54
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^9.0.1":
+"uuid@npm:^9.0.0, uuid@npm:^9.0.1":
   version: 9.0.1
   resolution: "uuid@npm:9.0.1"
   bin:

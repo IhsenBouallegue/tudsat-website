@@ -26,6 +26,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "sponsors": {
+              "type": "SharedSlice"
+            },
+            "info_grid": {
+              "type": "SharedSlice"
+            },
             "subsections": {
               "type": "SharedSlice"
             },

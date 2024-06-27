@@ -7,86 +7,34 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Thanks to these fine folks for helping TUDSaT thrive"
+			},
+			"sponsors_page": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"name",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "central",
-							"type": "Text"
-						}
-					],
-					[
-						"logo",
-						{
-							"url": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxsb2dvJTIwfGVufDB8fHx8MTcxNDU2Mzg1NHww&ixlib=rb-4.0.3&q=85",
-							"alt": "silver mercedes benz emblem on blue surface",
-							"origin": {
-								"id": "5MlBMYDsGBY",
-								"url": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxsb2dvJTIwfGVufDB8fHx8MTcxNDU2Mzg1NHww&ixlib=rb-4.0.3&q=85",
-								"width": 6016,
-								"height": 4016
-							},
-							"width": 6016,
-							"height": 4016,
-							"edit": {
-								"background": "transparent",
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								}
-							},
-							"credits": null,
-							"__TYPE__": "ImageContent",
-							"thumbnails": {}
-						}
-					]
-				]
+				"value": []
 			},
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"logo",
-						{
-							"url": "https://images.unsplash.com/photo-1612994370726-5d4d609fca1b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8YXBwbGUlMjBsb2dvfGVufDB8fHx8MTcxNDU2Mzk5M3ww&ixlib=rb-4.0.3&q=85",
-							"alt": "silver apple logo on silver surface",
-							"origin": {
-								"id": "6xtlCkulGXA",
-								"url": "https://images.unsplash.com/photo-1612994370726-5d4d609fca1b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8YXBwbGUlMjBsb2dvfGVufDB8fHx8MTcxNDU2Mzk5M3ww&ixlib=rb-4.0.3&q=85",
-								"width": 2908,
-								"height": 3635
-							},
-							"width": 2908,
-							"height": 3635,
-							"edit": {
-								"background": "transparent",
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								}
-							},
-							"credits": null,
-							"__TYPE__": "ImageContent",
-							"thumbnails": {}
-						}
-					],
-					[
-						"name",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "apple"
-						}
-					]
-				]
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "full",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
 			}
 		]
 	}
