@@ -20,37 +20,17 @@
           }
         }
       },
-      "items": {
-        "name": {
-          "type": "Text",
-          "config": {
-            "label": "Name",
-            "placeholder": ""
-          }
-        },
-        "position": {
-          "type": "Text",
-          "config": {
-            "label": "Position",
-            "placeholder": ""
-          }
-        },
-        "email": {
-          "type": "Text",
-          "config": {
-            "label": "email",
-            "placeholder": ""
-          }
-        },
-        "photo": {
-          "type": "Image",
-          "config": {
-            "label": "Photo",
-            "constraint": {},
-            "thumbnails": []
-          }
-        }
-      }
+      "items": {}
+    },
+    {
+      "id": "full",
+      "name": "Full",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
     }
   ]
 }

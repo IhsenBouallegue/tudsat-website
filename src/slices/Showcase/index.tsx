@@ -28,7 +28,10 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
           >
             <PrismicNextImage field={item.background_image} className="object-cover" fill />
             <div
-              className={`p-3 h-1/4 ease-in transition-all backdrop-blur-md group-hover:backdrop-blur-lg text-white group-hover:bg-white group-hover:text-black group-hover:h-1/2 bg-[${item.color}] `}
+              className={
+                "p-3 h-1/4 ease-in transition-all backdrop-blur-md group-hover:backdrop-blur-lg text-white group-hover:bg-white group-hover:h-1/3 overflow-hidden"
+              }
+              style={{ backgroundColor: item.color || "#000000", opacity: 0.8 }}
             >
               <h3 className="transition-[margin] mb-0 group-hover:mb-3 text-6xl font-black text-center  tracking-widest font-mono">
                 {item.title}

@@ -1,0 +1,72 @@
+{
+  "format": "custom",
+  "id": "team_members",
+  "label": "Team Members",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "team_members": {
+        "type": "Group",
+        "config": {
+          "label": "Team Members",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "position": {
+              "type": "Text",
+              "config": {
+                "label": "Position",
+                "placeholder": ""
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "Email",
+                "placeholder": ""
+              }
+            },
+            "section": {
+              "type": "Select",
+              "config": {
+                "label": "Section",
+                "placeholder": "",
+                "options": [
+                  "TUDSaT Board",
+                  "RAPID - Rocket Team",
+                  "TRACE - CubeSat Team",
+                  "TUDSaT PR"
+                ],
+                "default_value": "TUDSaT Board"
+              }
+            },
+            "highlight": {
+              "type": "Boolean",
+              "config": {
+                "label": "Highlight",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
+              }
+            },
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ const Sponsors = async ({ slice }: SponsorsProps) => {
   const client = createClient();
   const sponsors = await client.getSingle("sponsors");
   // get categories
-  const categories = sponsors.data.sponsors.map((sponsor) => sponsor.category);
+  const categories = [...new Set(sponsors.data.sponsors.map((sponsor) => sponsor.category))];
   return (
     <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
       {slice.variation === "full" ? (

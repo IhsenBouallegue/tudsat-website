@@ -269,6 +269,7 @@ export type LayoutDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TeamMembersSlice
   | SponsorsSlice
   | InfoGridSlice
   | SubsectionsSlice
@@ -483,6 +484,113 @@ export type SubMenuDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Team Members → Team Members*
+ */
+export interface TeamMembersDocumentDataTeamMembersItem {
+  /**
+   * Name field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.team_members[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Position field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.team_members[].position
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Email field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.team_members[].email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Section field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: TUDSaT Board
+   * - **API ID Path**: team_members.team_members[].section
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  section: prismic.SelectField<
+    | "TUDSaT Board"
+    | "RAPID - Rocket Team"
+    | "TRACE - CubeSat Team"
+    | "TUDSaT PR",
+    "filled"
+  >;
+
+  /**
+   * Highlight field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: team_members.team_members[].highlight
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  highlight: prismic.BooleanField;
+
+  /**
+   * Image field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.team_members[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Content for Team Members documents
+ */
+interface TeamMembersDocumentData {
+  /**
+   * Team Members field in *Team Members*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.team_members[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  team_members: prismic.GroupField<
+    Simplify<TeamMembersDocumentDataTeamMembersItem>
+  >;
+}
+
+/**
+ * Team Members document from Prismic
+ *
+ * - **API ID**: `team_members`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TeamMembersDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<TeamMembersDocumentData>,
+    "team_members",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | FooterDocument
   | HeaderDocument
@@ -491,7 +599,8 @@ export type AllDocumentTypes =
   | PageDocument
   | SettingsDocument
   | SponsorsDocument
-  | SubMenuDocument;
+  | SubMenuDocument
+  | TeamMembersDocument;
 
 /**
  * Primary content in *Article → Default → Primary*
@@ -609,6 +718,46 @@ export interface CallToActionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   call_to_action_link: prismic.LinkField;
+
+  /**
+   * Image 1 field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image 3 field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.image_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_3: prismic.ImageField<never>;
+
+  /**
+   * Image 4 field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.image_4
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_4: prismic.ImageField<never>;
 }
 
 /**
@@ -1290,51 +1439,6 @@ export interface TeamMembersSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *TeamMembers → Items*
- */
-export interface TeamMembersSliceDefaultItem {
-  /**
-   * Name field in *TeamMembers → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team_members.items[].name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Position field in *TeamMembers → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team_members.items[].position
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  position: prismic.KeyTextField;
-
-  /**
-   * email field in *TeamMembers → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team_members.items[].email
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  email: prismic.KeyTextField;
-
-  /**
-   * Photo field in *TeamMembers → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team_members.items[].photo
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  photo: prismic.ImageField<never>;
-}
-
-/**
  * Default variation for TeamMembers Slice
  *
  * - **API ID**: `default`
@@ -1344,13 +1448,26 @@ export interface TeamMembersSliceDefaultItem {
 export type TeamMembersSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<TeamMembersSliceDefaultPrimary>,
-  Simplify<TeamMembersSliceDefaultItem>
+  never
+>;
+
+/**
+ * Full variation for TeamMembers Slice
+ *
+ * - **API ID**: `full`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMembersSliceFull = prismic.SharedSliceVariation<
+  "full",
+  Record<string, never>,
+  never
 >;
 
 /**
  * Slice variation for *TeamMembers*
  */
-type TeamMembersSliceVariation = TeamMembersSliceDefault;
+type TeamMembersSliceVariation = TeamMembersSliceDefault | TeamMembersSliceFull;
 
 /**
  * TeamMembers Shared Slice
@@ -1489,6 +1606,9 @@ declare module "@prismicio/client" {
       SubMenuDocument,
       SubMenuDocumentData,
       SubMenuDocumentDataSlicesSlice,
+      TeamMembersDocument,
+      TeamMembersDocumentData,
+      TeamMembersDocumentDataTeamMembersItem,
       AllDocumentTypes,
       ArticleSlice,
       ArticleSliceDefaultPrimary,
@@ -1543,9 +1663,9 @@ declare module "@prismicio/client" {
       SubsectionsSliceDefault,
       TeamMembersSlice,
       TeamMembersSliceDefaultPrimary,
-      TeamMembersSliceDefaultItem,
       TeamMembersSliceVariation,
       TeamMembersSliceDefault,
+      TeamMembersSliceFull,
       TestemonialsSlice,
       TestemonialsSliceDefaultPrimary,
       TestemonialsSliceDefaultItem,
