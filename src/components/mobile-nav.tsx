@@ -62,11 +62,16 @@ export function MobileNav({ items }: { items: Content.HeaderDocumentDataNavigati
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <Image className="mr-2 h-4 w-4" src="tudsat_logo.svg" alt="logo" width={24} height={24} />
-          <span className="font-bold">{siteConfig.name}</span>
+          <Image
+            className="ml-4 h-20 w-20"
+            src="tudsat_logo.svg"
+            alt="logo"
+            width={48}
+            height={48}
+          />
         </Link>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-6">
             {items?.map(
               (item) =>
                 // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>

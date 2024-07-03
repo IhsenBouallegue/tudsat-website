@@ -34,13 +34,11 @@
                 "label": "Category",
                 "placeholder": "",
                 "options": [
-                  "TUDSaT Sponsors",
                   "TRACE Prime Sponsor",
-                  "TRACE Sponsors",
                   "RAPID Prime Sponsor",
-                  "RAPID Sponsors"
-                ],
-                "default_value": "TUDSaT Sponsors"
+                  "Our Sponsors",
+                  "Our Academic Partners"
+                ]
               }
             },
             "logo": {

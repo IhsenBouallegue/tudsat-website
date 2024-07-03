@@ -29,6 +29,7 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
+import { SiDiscord, SiInstagram, SiLinkedin, SiX, SiYoutube } from "@icons-pack/react-simple-icons";
 
 export type Icon = LucideIcon;
 
@@ -71,11 +72,12 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  twitter: Twitter,
   check: Check,
-  instagram: Instagram,
-  youtube: Youtube,
-  linkedin: Linkedin,
+  x: SiX,
+  instagram: SiInstagram,
+  youtube: SiYoutube,
+  linkedin: SiLinkedin,
+  discord: SiDiscord,
   mail: Mail,
 };
 

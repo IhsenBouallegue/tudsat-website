@@ -18,8 +18,7 @@ export function MainNav({ items }: { items: Content.HeaderDocumentDataNavigation
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
-        <span className="hidden font-bold sm:inline-block sm:text-2xl">{siteConfig.name}</span>
+        <Image className="p-2" src="tudsat_logo.svg" alt="logo" width={92} height={92} />
       </Link>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">

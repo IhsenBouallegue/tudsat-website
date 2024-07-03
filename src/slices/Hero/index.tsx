@@ -1,6 +1,7 @@
 import Bounded from "@/components/bounded";
 import { Button } from "@/components/ui/button";
 import type { Content } from "@prismicio/client";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import type { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 
@@ -15,16 +16,20 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
     <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <div className="relative isolate px-6 lg:px-8 w-full">
-        <div className="relative mx-auto max-w-2xl pb-32 py-16 sm:py-24 lg:py-36 z-20">
+      <div className="relative isolate px-0 lg:px-8 w-full">
+        <div className="relative mx-auto max-w-2xl pb-32 sm:py-24 lg:py-36 z-20">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
               {slice.primary.heading}
             </h1>
-            <p className="mt-6 text-lg leading-8 ">{slice.primary.body}</p>
+            <p className="mt-6 text-lg leading-8 max-w-[90%] md:max-w-[60%] m-auto backdrop-blur-sm">
+              {slice.primary.body}
+            </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button>Join Now</Button>
-              <Button variant="link">Learn more</Button>
+              <Button>{slice.primary.cta_primary_text}</Button>
+              <PrismicNextLink field={slice.primary.cta_secondary_link}>
+                <Button variant="link">{slice.primary.cta_secondary_text}</Button>
+              </PrismicNextLink>
             </div>
           </div>
         </div>
@@ -41,13 +46,25 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             }}
           />
         </div>
-
-        <div className="absolute left-[10%] top-[30%] transition-all duration-1000">
-          <Image className="animate-float" src="/frodo.png" alt="Frodo" width={300} height={400} />
+        <div className="absolute w-full h-full top-0 left-0 -z-30">
+          <PrismicNextImage
+            className="absolute transform-gpu origin-top-left animate-fly h-[300px] md:-rotate-[15deg] md:h-[400px] w-auto"
+            field={slice.primary.background_image_2}
+            width={300}
+            height={300}
+          />
         </div>
 
-        <div className="absolute right-[10%] top-[50%] transition-all duration-1000">
-          <Image className="animate-float" src="/trace.png" alt="Trace" width={200} height={400} />
+        <div
+          className="absolute w-full h-full animate-spin top-0 left-0 -z-30"
+          style={{ animationDuration: "60s" }}
+        >
+          <PrismicNextImage
+            className="origin-[100] h-[100px] md:h-[150px] w-auto"
+            field={slice.primary.background_image_1}
+            width={300}
+            height={300}
+          />
         </div>
 
         <div

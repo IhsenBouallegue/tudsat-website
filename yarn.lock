@@ -282,6 +282,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@icons-pack/react-simple-icons@npm:^9.6.0":
+  version: 9.6.0
+  resolution: "@icons-pack/react-simple-icons@npm:9.6.0"
+  peerDependencies:
+    react: ^16.13 || ^17 || ^18
+  checksum: 10c0/b774e7bb8a0351be6794178ac045d2892e00b768ba18a2735ab37cd760541b604e12fb1462ad7d28b3d7f4631d1831096f6b7086cb17b6af6db89e40d0e8c004
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.2":
   version: 0.33.2
   resolution: "@img/sharp-darwin-arm64@npm:0.33.2"
@@ -7432,6 +7441,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.7.1"
     "@hookform/resolvers": "npm:^3.3.2"
+    "@icons-pack/react-simple-icons": "npm:^9.6.0"
     "@prismicio/client": "npm:^7.4.1"
     "@prismicio/next": "npm:^1.5.0"
     "@prismicio/react": "npm:^2.7.4"

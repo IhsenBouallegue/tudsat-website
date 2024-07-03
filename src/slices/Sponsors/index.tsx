@@ -47,7 +47,7 @@ const Sponsors = async ({ slice }: SponsorsProps) => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-lg font-semibold leading-8">{slice.primary.title}</h2>
           <SponsorGrid>
-            {sponsors.data.sponsors.map((sponsor) => (
+            {sponsors.data.sponsors.slice(0, 5).map((sponsor) => (
               <SponsorCard key={sponsor.name} sponsor={sponsor} />
             ))}
           </SponsorGrid>

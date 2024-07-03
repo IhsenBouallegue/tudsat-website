@@ -37,7 +37,7 @@ const TeamMembers = async ({ slice }: TeamMembersProps) => {
         <div className="flex flex-col gap-32">
           {sections.map((section) => (
             <div key={section}>
-              <h2 className="mb-16 text-3xl font-bold ">{section}</h2>
+              <h2 className="mb-16 text-3xl font-bold">{section}</h2>
               <div className="m-auto grid gap-x-6 gap-y-32 grid-cols-1 md:grid-cols-3 w-full md:max-w-screen-lg place-items-center">
                 {teamMembers.data.team_members
                   .filter((member) => member.section === section)
@@ -50,7 +50,7 @@ const TeamMembers = async ({ slice }: TeamMembersProps) => {
         </div>
       ) : (
         <>
-          <h2 className="mb-32 text-3xl font-bold">Meet our Leaders</h2>
+          <h2 className="mb-32 text-3xl font-bold">{slice.primary.title}</h2>
           <div className="m-auto grid gap-x-6 gap-y-32 grid-cols-1 md:grid-cols-3 w-full md:max-w-screen-lg place-items-center">
             {teamMembers.data.team_members
               .filter((member) => member.highlight)

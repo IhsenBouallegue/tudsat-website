@@ -394,17 +394,14 @@ export interface SponsorsDocumentDataSponsorsItem {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: TUDSaT Sponsors
    * - **API ID Path**: sponsors.sponsors[].category
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   category: prismic.SelectField<
-    | "TUDSaT Sponsors"
     | "TRACE Prime Sponsor"
-    | "TRACE Sponsors"
     | "RAPID Prime Sponsor"
-    | "RAPID Sponsors",
-    "filled"
+    | "Our Sponsors"
+    | "Our Academic Partners"
   >;
 
   /**
@@ -858,6 +855,66 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   body: prismic.KeyTextField;
+
+  /**
+   * CTA Primary Text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.cta_primary_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_primary_text: prismic.KeyTextField;
+
+  /**
+   * CTA Primary Link field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.cta_primary_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_primary_link: prismic.LinkField;
+
+  /**
+   * CTA Secondary Text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.cta_secondary_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_secondary_text: prismic.KeyTextField;
+
+  /**
+   * CTA Secondary Link field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.cta_secondary_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_secondary_link: prismic.LinkField;
+
+  /**
+   * Background Image 1 field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.background_image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image_1: prismic.ImageField<never>;
+
+  /**
+   * Background Image 2 field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.background_image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image_2: prismic.ImageField<never>;
 }
 
 /**

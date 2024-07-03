@@ -10,7 +10,7 @@ export default async function Footer() {
   const footer = await client.getSingle("footer");
 
   return (
-    <footer className="mt-14 sm:mt-16 md:mt-20 lg:mt-24 p-4 sm:p-6 md:p-8 lg:p-10 bg-primary text-secondary-foreground flex items-center justify-between">
+    <footer className="mt-14 sm:mt-16 md:mt-20 lg:mt-24 p-4 sm:p-6 bg-primary text-secondary-foreground flex items-center justify-between">
       <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
       <nav>
         <ul className="flex">
@@ -36,6 +36,7 @@ export default async function Footer() {
             {social.social_platform === "instagram" && <Icons.instagram />}
             {social.social_platform === "linkedin" && <Icons.linkedin />}
             {social.social_platform === "youtube" && <Icons.youtube />}
+            {social.social_platform === "discord" && <Icons.discord />}
           </PrismicNextLink>
         ))}
       </div>
