@@ -16,6 +16,27 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
     <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+      <div className="absolute top-0  w-full h-full  overflow-hidden">
+        <div className="absolute w-full h-full top-0 left-0 -z-30">
+          <PrismicNextImage
+            className="absolute transform-gpu origin-top-left animate-fly h-[300px] md:-rotate-[15deg] md:h-[400px] w-auto"
+            field={slice.primary.background_image_2}
+            width={300}
+            height={300}
+          />
+        </div>
+        <div
+          className="absolute w-[100vmin] h-[100vmin] top-0 left-0 -z-30 animate-spin"
+          style={{ animationDuration: "60s" }}
+        >
+          <PrismicNextImage
+            className="h-[100px] md:h-[150px] w-auto -rotate-[45deg]"
+            field={slice.primary.background_image_1}
+            width={300}
+            height={300}
+          />
+        </div>
+      </div>
       <div className="relative isolate px-0 lg:px-8 w-full">
         <div className="relative mx-auto max-w-2xl pb-32 sm:py-24 lg:py-36 z-20">
           <div className="text-center">
@@ -26,7 +47,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               {slice.primary.body}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button>{slice.primary.cta_primary_text}</Button>
+              <PrismicNextLink field={slice.primary.cta_primary_link}>
+                <Button>{slice.primary.cta_primary_text}</Button>
+              </PrismicNextLink>
               <PrismicNextLink field={slice.primary.cta_secondary_link}>
                 <Button variant="link">{slice.primary.cta_secondary_text}</Button>
               </PrismicNextLink>
@@ -44,26 +67,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               clipPath:
                 "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
-          />
-        </div>
-        <div className="absolute w-full h-full top-0 left-0 -z-30">
-          <PrismicNextImage
-            className="absolute transform-gpu origin-top-left animate-fly h-[300px] md:-rotate-[15deg] md:h-[400px] w-auto"
-            field={slice.primary.background_image_2}
-            width={300}
-            height={300}
-          />
-        </div>
-
-        <div
-          className="absolute w-full h-full animate-spin top-0 left-0 -z-30"
-          style={{ animationDuration: "60s" }}
-        >
-          <PrismicNextImage
-            className="origin-[100] h-[100px] md:h-[150px] w-auto"
-            field={slice.primary.background_image_1}
-            width={300}
-            height={300}
           />
         </div>
 

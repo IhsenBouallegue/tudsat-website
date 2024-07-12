@@ -1,12 +1,10 @@
 import Bounded from "@/components/bounded";
-import MasonryGrid from "@/components/masonry-grid";
-import MasonaryGrid from "@/components/masonry-grid";
+import { Socials } from "@/components/socials";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import Link from "next/link";
 
 /**
  * Props for `CallToAction`.
@@ -46,6 +44,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
               >
                 {slice.primary.call_to_action_label}
               </PrismicNextLink>
+              <Socials />
             </div>
           </div>
           <div className="w-full m-auto p-8">

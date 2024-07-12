@@ -30,33 +30,6 @@ export interface FooterDocumentDataNavigationItem {
 }
 
 /**
- * Item in *Footer → Socials*
- */
-export interface FooterDocumentDataSocialsItem {
-  /**
-   * Social Platform field in *Footer → Socials*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.socials[].social_platform
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  social_platform: prismic.SelectField<
-    "instagram" | "linkedin" | "discord" | "youtube"
-  >;
-
-  /**
-   * link field in *Footer → Socials*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.socials[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
  * Content for Footer documents
  */
 interface FooterDocumentData {
@@ -70,17 +43,6 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<FooterDocumentDataNavigationItem>>;
-
-  /**
-   * Socials field in *Footer*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.socials[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  socials: prismic.GroupField<Simplify<FooterDocumentDataSocialsItem>>;
 }
 
 /**
@@ -223,52 +185,9 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type LayoutDocumentDataSlicesSlice = MenuItemSlice;
-
-type LayoutDocumentDataSlices1Slice = MenuItemSlice;
-
-/**
- * Content for Layout documents
- */
-interface LayoutDocumentData {
-  /**
-   * Slice Zone field in *Layout*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: layout.slices[]
-   * - **Tab**: Header
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<LayoutDocumentDataSlicesSlice> /**
-   * Slice Zone field in *Layout*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: layout.slices1[]
-   * - **Tab**: Footer
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */;
-  slices1: prismic.SliceZone<LayoutDocumentDataSlices1Slice>;
-}
-
-/**
- * Layout document from Prismic
- *
- * - **API ID**: `layout`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type LayoutDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<LayoutDocumentData>,
-    "layout",
-    Lang
-  >;
-
 type PageDocumentDataSlicesSlice =
+  | MembershipFormSlice
+  | InfoHeaderSlice
   | TeamMembersSlice
   | SponsorsSlice
   | InfoGridSlice
@@ -346,7 +265,48 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-interface SettingsDocumentData {}
+/**
+ * Item in *Settings → Socials*
+ */
+export interface SettingsDocumentDataSocialsItem {
+  /**
+   * Social Platform field in *Settings → Socials*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].social_platform
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  social_platform: prismic.SelectField<
+    "instagram" | "linkedin" | "discord" | "youtube" | "mail"
+  >;
+
+  /**
+   * Link field in *Settings → Socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for Settings documents
+ */
+interface SettingsDocumentData {
+  /**
+   * Socials field in *Settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  socials: prismic.GroupField<Simplify<SettingsDocumentDataSocialsItem>>;
+}
 
 /**
  * Settings document from Prismic
@@ -447,40 +407,6 @@ export type SponsorsDocument<Lang extends string = string> =
     Lang
   >;
 
-type SubMenuDocumentDataSlicesSlice = SubMenuItemSlice | HeadingSlice;
-
-/**
- * Content for Sub menu documents
- */
-interface SubMenuDocumentData {
-  /**
-   * Slice Zone field in *Sub menu*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: sub_menu.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<SubMenuDocumentDataSlicesSlice>;
-}
-
-/**
- * Sub menu document from Prismic
- *
- * - **API ID**: `sub_menu`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type SubMenuDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<SubMenuDocumentData>,
-    "sub_menu",
-    Lang
-  >;
-
 /**
  * Item in *Team Members → Team Members*
  */
@@ -504,16 +430,6 @@ export interface TeamMembersDocumentDataTeamMembersItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   position: prismic.KeyTextField;
-
-  /**
-   * Email field in *Team Members → Team Members*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team_members.team_members[].email
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  email: prismic.KeyTextField;
 
   /**
    * Section field in *Team Members → Team Members*
@@ -592,11 +508,9 @@ export type AllDocumentTypes =
   | FooterDocument
   | HeaderDocument
   | HomeDocument
-  | LayoutDocument
   | PageDocument
   | SettingsDocument
   | SponsorsDocument
-  | SubMenuDocument
   | TeamMembersDocument;
 
 /**
@@ -785,51 +699,6 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
 export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
->;
-
-/**
- * Primary content in *Heading → Default → Primary*
- */
-export interface HeadingSliceDefaultPrimary {
-  /**
-   * Heading field in *Heading → Default → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: heading.default.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.TitleField;
-}
-
-/**
- * Default variation for Heading Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeadingSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeadingSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Heading*
- */
-type HeadingSliceVariation = HeadingSliceDefault;
-
-/**
- * Heading Shared Slice
- *
- * - **API ID**: `heading`
- * - **Description**: Heading
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeadingSlice = prismic.SharedSlice<
-  "heading",
-  HeadingSliceVariation
 >;
 
 /**
@@ -1022,6 +891,131 @@ type InfoGridSliceVariation = InfoGridSliceDefault;
 export type InfoGridSlice = prismic.SharedSlice<
   "info_grid",
   InfoGridSliceVariation
+>;
+
+/**
+ * Primary content in *InfoHeader → Default → Primary*
+ */
+export interface InfoHeaderSliceDefaultPrimary {
+  /**
+   * Title field in *InfoHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_header.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtext field in *InfoHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_header.default.primary.subtext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtext: prismic.KeyTextField;
+
+  /**
+   * Lead field in *InfoHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_header.default.primary.lead
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  lead: prismic.KeyTextField;
+
+  /**
+   * Meeting field in *InfoHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_header.default.primary.meeting
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meeting: prismic.KeyTextField;
+
+  /**
+   * Email field in *InfoHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_header.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Logo field in *InfoHeader → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_header.default.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for InfoHeader Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoHeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InfoHeaderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *InfoHeader*
+ */
+type InfoHeaderSliceVariation = InfoHeaderSliceDefault;
+
+/**
+ * InfoHeader Shared Slice
+ *
+ * - **API ID**: `info_header`
+ * - **Description**: InfoHeader
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoHeaderSlice = prismic.SharedSlice<
+  "info_header",
+  InfoHeaderSliceVariation
+>;
+
+/**
+ * Default variation for MembershipForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembershipFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *MembershipForm*
+ */
+type MembershipFormSliceVariation = MembershipFormSliceDefault;
+
+/**
+ * MembershipForm Shared Slice
+ *
+ * - **API ID**: `membership_form`
+ * - **Description**: MembershipForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembershipFormSlice = prismic.SharedSlice<
+  "membership_form",
+  MembershipFormSliceVariation
 >;
 
 /**
@@ -1641,28 +1635,21 @@ declare module "@prismicio/client" {
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataNavigationItem,
-      FooterDocumentDataSocialsItem,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataNavigationItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
-      LayoutDocument,
-      LayoutDocumentData,
-      LayoutDocumentDataSlicesSlice,
-      LayoutDocumentDataSlices1Slice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      SettingsDocumentDataSocialsItem,
       SponsorsDocument,
       SponsorsDocumentData,
       SponsorsDocumentDataSponsorsItem,
-      SubMenuDocument,
-      SubMenuDocumentData,
-      SubMenuDocumentDataSlicesSlice,
       TeamMembersDocument,
       TeamMembersDocumentData,
       TeamMembersDocumentDataTeamMembersItem,
@@ -1677,10 +1664,6 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
-      HeadingSlice,
-      HeadingSliceDefaultPrimary,
-      HeadingSliceVariation,
-      HeadingSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -1690,6 +1673,13 @@ declare module "@prismicio/client" {
       InfoGridSliceDefaultItem,
       InfoGridSliceVariation,
       InfoGridSliceDefault,
+      InfoHeaderSlice,
+      InfoHeaderSliceDefaultPrimary,
+      InfoHeaderSliceVariation,
+      InfoHeaderSliceDefault,
+      MembershipFormSlice,
+      MembershipFormSliceVariation,
+      MembershipFormSliceDefault,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceWithSubMenuPrimary,

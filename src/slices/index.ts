@@ -5,9 +5,10 @@ import dynamic from "next/dynamic";
 export const components = {
   article: dynamic(() => import("./Article")),
   call_to_action: dynamic(() => import("./CallToAction")),
-  heading: dynamic(() => import("./Heading")),
   hero: dynamic(() => import("./Hero")),
   info_grid: dynamic(() => import("./InfoGrid")),
+  info_header: dynamic(() => import("./InfoHeader")),
+  membership_form: dynamic(() => import("./MembershipForm")),
   menu_item: dynamic(() => import("./MenuItem")),
   projects: dynamic(() => import("./Projects")),
   showcase: dynamic(() => import("./Showcase")),

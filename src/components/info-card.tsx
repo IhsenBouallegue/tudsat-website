@@ -1,18 +1,30 @@
-import { Icon } from "./icons";
+import { KeyTextField, isFilled } from "@prismicio/client";
+import { Icons, RenderIcon } from "./icons";
 import { Card } from "./ui/card";
 
-export default function InfoCard({
-  Icon,
+export function InfoCard({
+  icon,
   title,
   description,
-}: { Icon: Icon; title: string; description: string }) {
+  isTransparent = false,
+}: {
+  icon: KeyTextField;
+  title: KeyTextField;
+  description: KeyTextField;
+  isTransparent?: boolean;
+}): JSX.Element {
+  const WrapperComponent = isTransparent ? "div" : Card;
   return (
-    <Card className="flex items-center p-4 bg-gray-800">
-      <Icon className="w-6 h-6 text-primary mr-4" />
+    <WrapperComponent className="flex items-center p-4 flex-1">
+      <RenderIcon
+        // TODO: Asserting while we know it might be wrong is bad.
+        name={(icon as string) || "arrowsRight"}
+        className="w-6 h-6 mr-4"
+      />
       <div>
-        <p className="text-sm font-medium">{title}</p>
+        <p className="text-sm font-medium text-muted">{title}</p>
         <p className="text-lg">{description}</p>
       </div>
-    </Card>
+    </WrapperComponent>
   );
 }

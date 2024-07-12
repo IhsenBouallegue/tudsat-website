@@ -1,10 +1,37 @@
 {
   "format": "custom",
   "id": "settings",
-  "json": {
-    "Main": {}
-  },
   "label": "Settings",
   "repeatable": false,
-  "status": true
+  "status": true,
+  "json": {
+    "Main": {
+      "socials": {
+        "type": "Group",
+        "config": {
+          "label": "Socials",
+          "repeat": true,
+          "fields": {
+            "social_platform": {
+              "type": "Select",
+              "config": {
+                "label": "Social Platform",
+                "placeholder": "",
+                "options": ["instagram", "linkedin", "discord", "youtube", "mail"]
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

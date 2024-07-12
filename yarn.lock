@@ -5121,12 +5121,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.284.0":
-  version: 0.284.0
-  resolution: "lucide-react@npm:0.284.0"
+"lucide-react@npm:^0.408.0":
+  version: 0.408.0
+  resolution: "lucide-react@npm:0.408.0"
   peerDependencies:
-    react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/8b223e96577a545fd401826950b47cadc240db872bf308a7846dc726d9331319996b55f48b7c04d622eb2070cae03bea26e3450c024f802c5ae7a9a9fc06f95e
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/b79f17a4748c1cd17aa260dc5d226b64c50304b187b922f09ac4d4cb02304b2837f553eb8e75d151cde3957ebe1b3f7b120a324104835c1bcf82e5b401dedd6f
   languageName: node
   linkType: hard
 
@@ -7472,7 +7472,7 @@ __metadata:
     embla-carousel-react: "npm:^8.0.0-rc20"
     eslint: "npm:^8"
     eslint-config-next: "npm:13.5.4"
-    lucide-react: "npm:^0.284.0"
+    lucide-react: "npm:^0.408.0"
     next: "npm:^14.1.0"
     next-themes: "npm:^0.2.1"
     postcss: "npm:^8"

@@ -4,11 +4,12 @@ import { PrismicNextLink } from "@prismicio/next";
 import Image from "next/image";
 import { Icons } from "./icons";
 import { buttonVariants } from "./ui/button";
+import { Socials } from "./socials";
 
 export default async function Footer() {
   const client = createClient();
   const footer = await client.getSingle("footer");
-
+  const settings = await client.getSingle("settings");
   return (
     <footer className="mt-14 sm:mt-16 md:mt-20 lg:mt-24 p-4 sm:p-6 bg-primary text-secondary-foreground flex items-center justify-between">
       <Image src="tudsat_logo.svg" alt="logo" width={52} height={52} />
@@ -26,20 +27,7 @@ export default async function Footer() {
           ))}
         </ul>
       </nav>
-      <div>
-        {footer.data.socials.map((social) => (
-          <PrismicNextLink
-            field={social.link}
-            key={social.social_platform}
-            className={buttonVariants({ variant: "ghost", size: "icon" })}
-          >
-            {social.social_platform === "instagram" && <Icons.instagram />}
-            {social.social_platform === "linkedin" && <Icons.linkedin />}
-            {social.social_platform === "youtube" && <Icons.youtube />}
-            {social.social_platform === "discord" && <Icons.discord />}
-          </PrismicNextLink>
-        ))}
-      </div>
+      <Socials />
     </footer>
   );
 }

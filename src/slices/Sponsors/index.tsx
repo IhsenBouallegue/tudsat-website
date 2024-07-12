@@ -17,28 +17,29 @@ export type SponsorsProps = SliceComponentProps<Content.SponsorsSlice>;
 const Sponsors = async ({ slice }: SponsorsProps) => {
   const client = createClient();
   const sponsors = await client.getSingle("sponsors");
-  // get categories
   const categories = [...new Set(sponsors.data.sponsors.map((sponsor) => sponsor.category))];
+
   return (
     <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
       {slice.variation === "full" ? (
-        <div>
+        <div className="flex flex-col gap-16 pt-12">
           {categories.map((category) => (
             <div key={category}>
-              <h2 className="text-center text-lg font-semibold leading-8">{category}</h2>
+              <h2 className="text-center text-xl md:text-3xl font-semibold leading-8">
+                {category}
+              </h2>
 
               <SponsorGrid>
                 {sponsors.data.sponsors
                   .filter((sponsor) => sponsor.category === category)
-                  .map((sponsor) => (
-                    <div key={sponsor.name}>
-                      {sponsor.highlight ? (
-                        <HighlightedSponsor sponsor={sponsor} />
-                      ) : (
-                        <SponsorCard sponsor={sponsor} />
-                      )}
-                    </div>
-                  ))}
+                  .map((sponsor) =>
+                    // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
+                    sponsor.highlight ? (
+                      <HighlightedSponsor key={sponsor.name} sponsor={sponsor} />
+                    ) : (
+                      <SponsorCard key={sponsor.name} sponsor={sponsor} />
+                    ),
+                  )}
               </SponsorGrid>
             </div>
           ))}
@@ -65,9 +66,7 @@ const Sponsors = async ({ slice }: SponsorsProps) => {
 const SponsorGrid = ({ children }: { children: ReactNode[] }) => {
   return (
     <div className="container mx-auto py-8">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {children}
-      </div>
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">{children}</div>
     </div>
   );
 };
@@ -75,33 +74,17 @@ const SponsorGrid = ({ children }: { children: ReactNode[] }) => {
 const SponsorCard = ({ sponsor }: { sponsor: Content.SponsorsDocumentDataSponsorsItem }) => {
   return (
     <div className="p-4 flex items-center justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-accent/90">
-      <PrismicNextImage
-        key={sponsor.name}
-        field={sponsor.logo}
-        width={258}
-        height={28}
-        className="saturate-0 hover:saturate-100 object-contain h-12 w-32"
-      />
+      <PrismicNextImage field={sponsor.logo} className="object-contain h-20 w-auto" />
     </div>
   );
 };
 
 const HighlightedSponsor = ({ sponsor }: { sponsor: Content.SponsorsDocumentDataSponsorsItem }) => {
   return (
-    <div className="p-4 flex items-center justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-secondary/90">
-      <PrismicNextImage
-        key={sponsor.name}
-        field={sponsor.logo}
-        width={258}
-        height={28}
-        className="object-contain h-36 "
-      />
+    <div className="p-4 flex col-span-full justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-secondary/90">
+      <PrismicNextImage field={sponsor.logo} className="object-contain h-48 w-auto" />
     </div>
   );
-};
-
-const isHighlighSponsor = (sponsor: Content.SponsorsDocumentDataSponsorsItem) => {
-  return sponsor.highlight;
 };
 
 export default Sponsors;

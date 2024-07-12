@@ -26,6 +26,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "membership_form": {
+              "type": "SharedSlice"
+            },
+            "info_header": {
+              "type": "SharedSlice"
+            },
             "team_members": {
               "type": "SharedSlice"
             },

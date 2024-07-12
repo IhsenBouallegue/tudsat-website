@@ -79,18 +79,6 @@ function TeamMemberCard({ member }: { member: Content.TeamMembersDocumentDataTea
         <CardTitle className="text-xl">{member.name}</CardTitle>
         <CardDescription className="text-accent tracking-widest">{member.position}</CardDescription>
       </CardHeader>
-
-      <CardFooter className="justify-center p-4">
-        <Button asChild variant="outline" size="sm">
-          <a
-            href={`mailto:${member.email}`}
-            className="text-xs text-accent tracking-widest flex align-middle justify-center"
-          >
-            <Icons.mail className="w-4 h-4 mr-2" />
-            Contact
-          </a>
-        </Button>
-      </CardFooter>
     </Card>
   );
 }

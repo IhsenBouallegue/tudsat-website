@@ -29,31 +29,6 @@
             }
           }
         }
-      },
-      "socials": {
-        "type": "Group",
-        "config": {
-          "label": "Socials",
-          "repeat": true,
-          "fields": {
-            "social_platform": {
-              "type": "Select",
-              "config": {
-                "label": "Social Platform",
-                "placeholder": "",
-                "options": ["instagram", "linkedin", "discord", "youtube"]
-              }
-            },
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "link",
-                "placeholder": "",
-                "select": null
-              }
-            }
-          }
-        }
       }
     }
   }
