@@ -73,17 +73,23 @@ const SponsorGrid = ({ children }: { children: ReactNode[] }) => {
 
 const SponsorCard = ({ sponsor }: { sponsor: Content.SponsorsDocumentDataSponsorsItem }) => {
   return (
-    <div className="p-4 flex items-center justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-accent/90">
+    <PrismicNextLink
+      field={sponsor.link}
+      className="p-4 flex items-center justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-accent/90"
+    >
       <PrismicNextImage field={sponsor.logo} className="object-contain h-20 w-auto" />
-    </div>
+    </PrismicNextLink>
   );
 };
 
 const HighlightedSponsor = ({ sponsor }: { sponsor: Content.SponsorsDocumentDataSponsorsItem }) => {
   return (
-    <div className="p-4 flex col-span-full justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-secondary/90">
+    <PrismicNextLink
+      field={sponsor.link}
+      className="p-4 flex col-span-full justify-center shadow-md bg-white/10 rounded-lg ring-2 ring-secondary/90"
+    >
       <PrismicNextImage field={sponsor.logo} className="object-contain h-48 w-auto" />
-    </div>
+    </PrismicNextLink>
   );
 };
 
