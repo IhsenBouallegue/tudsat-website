@@ -3216,6 +3216,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-auto-scroll@npm:^8.1.6":
+  version: 8.1.6
+  resolution: "embla-carousel-auto-scroll@npm:8.1.6"
+  peerDependencies:
+    embla-carousel: 8.1.6
+  checksum: 10c0/019735d00864ed0b6825e95f821ba1f5c74f0199d785f1ce23ebe374492d0b67ef7ca23567b82575ecf089dfe7ead2a2b042af545d2a0c2637645e19ce3f8ed5
+  languageName: node
+  linkType: hard
+
 "embla-carousel-autoplay@npm:^8.0.0-rc20":
   version: 8.0.0-rc20
   resolution: "embla-carousel-autoplay@npm:8.0.0-rc20"
@@ -3225,28 +3234,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-react@npm:^8.0.0-rc20":
-  version: 8.0.0-rc20
-  resolution: "embla-carousel-react@npm:8.0.0-rc20"
+"embla-carousel-react@npm:^8.1.6":
+  version: 8.1.6
+  resolution: "embla-carousel-react@npm:8.1.6"
   dependencies:
-    embla-carousel: "npm:8.0.0-rc20"
-    embla-carousel-reactive-utils: "npm:8.0.0-rc20"
+    embla-carousel: "npm:8.1.6"
+    embla-carousel-reactive-utils: "npm:8.1.6"
   peerDependencies:
     react: ^16.8.0 || ^17.0.1 || ^18.0.0
-  checksum: 10c0/8e97481d514f651960ede7849e800f9aa638f99fb2a6cbab3e0fa8ef97e23a68b13764c7de0846dfc7570f70667f3aec6c2a55c3d47e7c94c4b75243a62b1e1d
+  checksum: 10c0/9de9aa4a9d02c3829f437ada0589c9f0ac449167b13cf1f238b1f786a78d7a90d5a8d65013d583283b95a3dc0549186e1ac762dbe974d2cd57dcbb29661f6aa6
   languageName: node
   linkType: hard
 
-"embla-carousel-reactive-utils@npm:8.0.0-rc20":
-  version: 8.0.0-rc20
-  resolution: "embla-carousel-reactive-utils@npm:8.0.0-rc20"
+"embla-carousel-reactive-utils@npm:8.1.6":
+  version: 8.1.6
+  resolution: "embla-carousel-reactive-utils@npm:8.1.6"
   peerDependencies:
-    embla-carousel: 8.0.0-rc20
-  checksum: 10c0/11e1cf3faf59f9c144afd593d0be3352b1da0254fbf9b7f3843d352af9cb77d72b5d99b03d5814f698c1a17037a3d64ad60a27809553fe3f02423ea8e6545c72
+    embla-carousel: 8.1.6
+  checksum: 10c0/e8e30e24bc3a0ff8a49b3dc724d9d53c75a3061a31ef76535d7be6bca72097ff099f45486f8ae3f3a70145895a99f21c277de01582c8c61669df8edf4560f57f
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:8.0.0-rc20, embla-carousel@npm:^8.0.0-rc20":
+"embla-carousel@npm:8.1.6":
+  version: 8.1.6
+  resolution: "embla-carousel@npm:8.1.6"
+  checksum: 10c0/a0085b97fa7aeea8c98187b58a25ca9648494afc14c8e41a3322920bd92d54659d04ed0aec0b3a7f60658bf49b22805b0ba76ffc0bae85d8719089f17402fb94
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:^8.0.0-rc20":
   version: 8.0.0-rc20
   resolution: "embla-carousel@npm:8.0.0-rc20"
   checksum: 10c0/77e821f956a1f2c3282a9ab0a6b8a9bb9753e7a72d49a91a441deab26a8f41b2709df85e3321bc16dd34ed3e3ab22e6d1bf5163ce0d7fe3e4b43d35c90bfbb2f
@@ -7468,8 +7484,9 @@ __metadata:
     concurrently: "npm:^8.2.2"
     date-fns: "npm:^2.30.0"
     embla-carousel: "npm:^8.0.0-rc20"
+    embla-carousel-auto-scroll: "npm:^8.1.6"
     embla-carousel-autoplay: "npm:^8.0.0-rc20"
-    embla-carousel-react: "npm:^8.0.0-rc20"
+    embla-carousel-react: "npm:^8.1.6"
     eslint: "npm:^8"
     eslint-config-next: "npm:13.5.4"
     lucide-react: "npm:^0.408.0"

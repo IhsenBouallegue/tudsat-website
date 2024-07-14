@@ -1,11 +1,22 @@
+"use client";
+
 import Bounded from "@/components/bounded";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselApi,
+} from "@/components/ui/carousel";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import { ReactNode } from "react";
-
+import Autoplay from "embla-carousel-autoplay";
+import { ReactNode, useEffect, useState } from "react";
+import AutoScroll from "embla-carousel-auto-scroll";
 /**
  * Props for `Sponsors`.
  */
@@ -45,17 +56,15 @@ const Sponsors = async ({ slice }: SponsorsProps) => {
           ))}
         </div>
       ) : (
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-center text-lg font-semibold leading-8">{slice.primary.title}</h2>
-          <SponsorGrid>
-            {sponsors.data.sponsors.slice(0, 5).map((sponsor) => (
-              <SponsorCard key={sponsor.name} sponsor={sponsor} />
-            ))}
-          </SponsorGrid>
-          <div className="flex justify-center">
-            <PrismicNextLink field={slice.primary.sponsors_page}>
-              <Button variant="outline">View More</Button>
-            </PrismicNextLink>
+        <div className="flex flex-col">
+          <h2 className="text-center mb-12 md:mb-28 text-lg font-semibold leading-8">
+            {slice.primary.title}
+          </h2>
+          <SponsorCarousel sponsors={sponsors.data.sponsors} />
+          <div className="flex justify-center mt-12">
+            <Button variant="link" asChild>
+              <PrismicNextLink field={slice.primary.sponsors_page}>View More</PrismicNextLink>
+            </Button>
           </div>
         </div>
       )}
@@ -90,6 +99,48 @@ const HighlightedSponsor = ({ sponsor }: { sponsor: Content.SponsorsDocumentData
     >
       <PrismicNextImage field={sponsor.logo} className="object-contain h-48 w-auto" />
     </PrismicNextLink>
+  );
+};
+
+const SponsorCarousel = ({
+  sponsors,
+}: { sponsors: Content.SponsorsDocumentDataSponsorsItem[] }) => {
+  return (
+    <Carousel
+      plugins={[
+        AutoScroll({
+          speed: 1,
+        }),
+      ]}
+      opts={{
+        align: "start",
+        loop: true,
+        dragFree: true,
+      }}
+      className="w-full"
+      style={{
+        maskImage: `linear-gradient(to right, transparent, rgba(0,0,0,1.0) 30px, rgba(0,0,0,0.5) 90%, transparent 100%),
+          linear-gradient(to left, transparent, rgba(0,0,0,1.0) 30px, rgba(0,0,0,0.5) 90%, transparent 100%)`,
+      }}
+    >
+      <CarouselContent className="-ml-1">
+        {sponsors.map((sponsor) => (
+          <CarouselItem
+            className="basis-1/2 md:basis-1/4 lg:basis-1/6 flex items-center justify-center"
+            style={{ boxSizing: "border-box" }}
+            key={sponsor.name}
+          >
+            <PrismicNextLink field={sponsor.link}>
+              <PrismicNextImage
+                field={sponsor.logo}
+                height={64}
+                style={{ filter: "drop-shadow(-3px -3px 8px rgba(255,255,255,0.3))" }}
+              />
+            </PrismicNextLink>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
   );
 };
 
