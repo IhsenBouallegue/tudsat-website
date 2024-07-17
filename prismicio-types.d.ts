@@ -266,6 +266,60 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 /**
+ * Content for Section documents
+ */
+interface SectionDocumentData {
+  /**
+   * Name field in *Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Short Name field in *Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.short_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  short_name: prismic.KeyTextField;
+
+  /**
+   * Color field in *Section*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  color: prismic.ColorField;
+}
+
+/**
+ * Section document from Prismic
+ *
+ * - **API ID**: `section`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SectionDocumentData>,
+    "section",
+    Lang
+  >;
+
+/**
  * Item in *Settings → Socials*
  */
 export interface SettingsDocumentDataSocialsItem {
@@ -442,23 +496,6 @@ export interface TeamMembersDocumentDataTeamMembersItem {
   position: prismic.KeyTextField;
 
   /**
-   * Section field in *Team Members → Team Members*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: TUDSaT Board
-   * - **API ID Path**: team_members.team_members[].section
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  section: prismic.SelectField<
-    | "TUDSaT Board"
-    | "RAPID - Rocket Team"
-    | "TRACE - CubeSat Team"
-    | "TUDSaT PR",
-    "filled"
-  >;
-
-  /**
    * Highlight field in *Team Members → Team Members*
    *
    * - **Field Type**: Boolean
@@ -478,6 +515,16 @@ export interface TeamMembersDocumentDataTeamMembersItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Section field in *Team Members → Team Members*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_members.team_members[].section
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  section: prismic.ContentRelationshipField<"section">;
 }
 
 /**
@@ -519,6 +566,7 @@ export type AllDocumentTypes =
   | HeaderDocument
   | HomeDocument
   | PageDocument
+  | SectionDocument
   | SettingsDocument
   | SponsorsDocument
   | TeamMembersDocument;
@@ -1714,6 +1762,8 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      SectionDocument,
+      SectionDocumentData,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataSocialsItem,

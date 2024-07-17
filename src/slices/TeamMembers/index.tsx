@@ -1,18 +1,11 @@
 import Bounded from "@/components/bounded";
-import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Content } from "@prismicio/client";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { isFilledRelatedData } from "@/lib/isFilledRelatedData";
+import { createClient } from "@/prismicio";
+import { ColorField, Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import { createClient } from "@/prismicio";
+import { cx } from "class-variance-authority";
 
 /**
  * Props for `TeamMembers`.
@@ -24,8 +17,10 @@ export type TeamMembersProps = SliceComponentProps<Content.TeamMembersSlice>;
  */
 const TeamMembers = async ({ slice }: TeamMembersProps) => {
   const client = createClient();
-  const teamMembers = await client.getSingle("team_members");
-  const sections = [...new Set(teamMembers.data.team_members.map((member) => member.section))];
+  const teamMembers = await client.getSingle("team_members", {
+    fetchLinks: ["section.name", "section.color"],
+  });
+  const sections = await client.getAllByType("section");
 
   return (
     <Bounded
@@ -35,14 +30,26 @@ const TeamMembers = async ({ slice }: TeamMembersProps) => {
     >
       {slice.variation === "full" ? (
         <div className="flex flex-col gap-32">
-          {sections.map((section) => (
-            <div key={section}>
-              <h2 className="mb-16 text-3xl font-bold">{section}</h2>
+          {sections.reverse().map((section) => (
+            <div key={section.data.name}>
+              <h2 className="mb-16 text-3xl font-bold">{section.data.name}</h2>
               <div className="m-auto grid gap-x-6 gap-y-32 grid-cols-1 md:grid-cols-3 w-full md:max-w-screen-lg place-items-center">
                 {teamMembers.data.team_members
-                  .filter((member) => member.section === section)
+                  .filter(
+                    (member) =>
+                      isFilledRelatedData(member.section, "section", "name") &&
+                      member.section.data.name === section.data.name,
+                  )
                   .map((member) => (
-                    <TeamMemberCard key={member.name} member={member} />
+                    <TeamMemberCard
+                      key={member.name}
+                      member={member}
+                      color={
+                        isFilledRelatedData(member.section, "section", "color")
+                          ? member.section.data.color
+                          : undefined
+                      }
+                    />
                   ))}
               </div>
             </div>
@@ -55,7 +62,15 @@ const TeamMembers = async ({ slice }: TeamMembersProps) => {
             {teamMembers.data.team_members
               .filter((member) => member.highlight)
               .map((member) => (
-                <TeamMemberCard key={member.name} member={member} />
+                <TeamMemberCard
+                  key={member.name}
+                  member={member}
+                  color={
+                    isFilledRelatedData(member.section, "section", "color")
+                      ? member.section.data.color
+                      : undefined
+                  }
+                />
               ))}
           </div>
         </>
@@ -66,9 +81,16 @@ const TeamMembers = async ({ slice }: TeamMembersProps) => {
 
 export default TeamMembers;
 
-function TeamMemberCard({ member }: { member: Content.TeamMembersDocumentDataTeamMembersItem }) {
+function TeamMemberCard({
+  member,
+  color,
+}: { member: Content.TeamMembersDocumentDataTeamMembersItem; color?: ColorField }) {
   return (
-    <Card key={member.name} className="w-64 h-full">
+    <Card
+      key={member.name}
+      className={"w-64 h-full"}
+      style={{ ...(isFilled.color(color) && { outlineColor: hexToRgba(color, 0.8) }) }}
+    >
       <PrismicNextImage
         field={member.image}
         width={150}
@@ -81,4 +103,12 @@ function TeamMemberCard({ member }: { member: Content.TeamMembersDocumentDataTea
       </CardHeader>
     </Card>
   );
+}
+
+function hexToRgba(hex: string, opacity: number): string {
+  const hexValue = hex.replace("#", "");
+  const r = Number.parseInt(hexValue.substring(0, 2), 16);
+  const g = Number.parseInt(hexValue.substring(2, 4), 16);
+  const b = Number.parseInt(hexValue.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }

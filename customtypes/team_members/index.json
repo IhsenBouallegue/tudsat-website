@@ -26,20 +26,6 @@
                 "placeholder": ""
               }
             },
-            "section": {
-              "type": "Select",
-              "config": {
-                "label": "Section",
-                "placeholder": "",
-                "options": [
-                  "TUDSaT Board",
-                  "RAPID - Rocket Team",
-                  "TRACE - CubeSat Team",
-                  "TUDSaT PR"
-                ],
-                "default_value": "TUDSaT Board"
-              }
-            },
             "highlight": {
               "type": "Boolean",
               "config": {
@@ -55,6 +41,14 @@
                 "label": "Image",
                 "constraint": {},
                 "thumbnails": []
+              }
+            },
+            "section": {
+              "type": "Link",
+              "config": {
+                "label": "Section",
+                "select": "document",
+                "customtypes": ["section"]
               }
             }
           }
