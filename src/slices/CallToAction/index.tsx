@@ -21,7 +21,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
       data-slice-variation={slice.variation}
       withExtraPadding
     >
-      <Card className="relative isolate overflow-hidden px-6 pt-16 w-full rounded-3xl sm:px-64 md:pt-64 lg:gap-x-60 lg:px-24 lg:pt-0">
+      <Card className="relative isolate overflow-hidden p-6 md:p-16 w-full rounded-3xl">
         <svg
           viewBox="0 0 1024 1024"
           className="absolute left-1/2 top-1/2 bg-gradient-to-r from-accent to-transparent -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
@@ -29,15 +29,15 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         >
           <circle cx={512} cy={512} r={512} fill="url(#gradient)" fillOpacity="1" />
         </svg>
-        <div className="flex w-full flex-col lg:flex-row">
-          <div className="max-w-md text-center my-8 md:my-32 lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+        <div className="flex w-full flex-col lg:flex-row  gap-6 items-center justify-center">
+          <div className="max-w-md my-8 lg:flex-auto text-left">
             <div className="text-3xl font-bold tracking-tight sm:text-4xl">
               <PrismicRichText field={slice.primary.title} />
             </div>
             <div className="mt-6 text-lg leading-8 text-muted">
               <PrismicRichText field={slice.primary.body} />
             </div>
-            <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+            <div className="mt-10 flex items-center justify-between gap-x-6 lg:justify-start">
               <PrismicNextLink
                 field={slice.primary.call_to_action_link}
                 className={buttonVariants({ variant: "default" })}

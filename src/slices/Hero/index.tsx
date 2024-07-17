@@ -19,19 +19,19 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="absolute top-0  w-full h-full  overflow-hidden">
         <div className="absolute w-full h-full top-0 left-0 -z-30">
           <PrismicNextImage
-            className="absolute transform-gpu origin-top-left animate-fly h-[300px] md:-rotate-[15deg] md:h-[400px] w-auto"
+            height={100}
+            width={100}
+            className="absolute transform-gpu origin-top-left animate-fly h-[300px] w-auto object-contain  md:-rotate-[15deg] md:h-[400px]"
             field={slice.primary.background_image_2}
-            width={300}
-            height={300}
           />
         </div>
         <div className="absolute w-[80vmin] h-[80vmin] -translate-x-[50%] -translate-y-[50%] top-[50%] left-[50%] -z-30">
-          <div className="w-full h-full  animate-spin" style={{ animationDuration: "60s" }}>
+          <div className="w-full h-full animate-spin" style={{ animationDuration: "60s" }}>
             <PrismicNextImage
-              className="h-[100px] md:h-[150px] w-auto -rotate-[30deg]"
+              height={100}
+              width={100}
+              className="h-[100px] w-auto object-contain md:h-[150px] -rotate-[30deg]"
               field={slice.primary.background_image_1}
-              width={300}
-              height={300}
             />
           </div>
         </div>

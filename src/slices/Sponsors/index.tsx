@@ -133,7 +133,7 @@ const SponsorCarousel = ({
             <PrismicNextLink field={sponsor.link}>
               <PrismicNextImage
                 field={sponsor.logo}
-                height={64}
+                className="object-contain h-20 w-auto"
                 style={{ filter: "drop-shadow(-3px -3px 8px rgba(255,255,255,0.3))" }}
               />
             </PrismicNextLink>

@@ -37,7 +37,7 @@ const Testemonials = ({ slice }: TestemonialsProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="relative my-16 sm:my-24 lg:my-28"
     >
-      <div className="absolute backdrop-blur-sm backdrop-saturate-200 inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] rounded-xl shadow-xl shadow-primary/10 ring-2 ring-accent/90 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+      <div className="absolute backdrop-blur-sm rounded-xl ring-2 ring-accent/90 backdrop-saturate-200 inset-y-0 right-1/2 -z-10 mr-20 w-[200%] origin-bottom-left skew-x-[-30deg] sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
       <div className="absolute bg-gradient-to-l from-primary to-transparent to-60% inset-0 -z-10 opacity-60" />
       <Carousel
         setApi={setApi}
@@ -91,8 +91,8 @@ function Testemonial({
   return (
     <div className="mx-auto py-24">
       <figure className="mt-2">
-        <blockquote className="text-center text-lg font-bold tracking-wide leading-8 sm:text-4xl sm:leading-9">
-          <p>{quote}</p>
+        <blockquote className="text-center text-xl font-bold tracking-wide sm:leading-loose sm:text-[2.15rem]">
+          {quote}
         </blockquote>
         <figcaption className="mt-10">
           <PrismicNextImage
