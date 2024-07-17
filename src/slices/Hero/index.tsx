@@ -25,16 +25,15 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             height={300}
           />
         </div>
-        <div
-          className="absolute w-[100vmin] h-[100vmin] top-0 left-0 -z-30 animate-spin"
-          style={{ animationDuration: "60s" }}
-        >
-          <PrismicNextImage
-            className="h-[100px] md:h-[150px] w-auto -rotate-[45deg]"
-            field={slice.primary.background_image_1}
-            width={300}
-            height={300}
-          />
+        <div className="absolute w-[80vmin] h-[80vmin] -translate-x-[50%] -translate-y-[50%] top-[50%] left-[50%] -z-30">
+          <div className="w-full h-full  animate-spin" style={{ animationDuration: "60s" }}>
+            <PrismicNextImage
+              className="h-[100px] md:h-[150px] w-auto -rotate-[30deg]"
+              field={slice.primary.background_image_1}
+              width={300}
+              height={300}
+            />
+          </div>
         </div>
       </div>
       <div className="relative isolate px-0 lg:px-8 w-full">
