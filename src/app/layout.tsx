@@ -19,9 +19,27 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 
+
+const metadataTitle = "TUDSaT";
+const metadataDescription = "TUDSaT is a space focused student association at TU Darmstadt.";
+
 export const metadata: Metadata = {
-  title: "TUDSaT",
-  description: "TUDSaT is a student association at TU Darmstadt.",
+  title: metadataTitle,
+  description: metadataDescription,
+  openGraph: {
+    type: "website",
+    url: "https://tudsat.space",
+    title: metadataTitle,
+    description: metadataDescription,
+    siteName: "TUDSaT",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
