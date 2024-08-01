@@ -21,7 +21,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
       data-slice-variation={slice.variation}
       withExtraPadding
     >
-      <Card className="relative isolate overflow-hidden p-6 md:p-16 w-full rounded-3xl">
+      <Card className="relative isolate overflow-hidden p-4 md:p-16 w-full rounded-3xl">
         <svg
           viewBox="0 0 1024 1024"
           className="absolute left-1/2 top-1/2 bg-gradient-to-r from-accent to-transparent -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
@@ -29,7 +29,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         >
           <circle cx={512} cy={512} r={512} fill="url(#gradient)" fillOpacity="1" />
         </svg>
-        <div className="flex w-full flex-col lg:flex-row  gap-6 items-center justify-center">
+        <div className="flex w-full flex-col lg:flex-row gap-6 items-center justify-center">
           <div className="max-w-md my-8 lg:flex-auto text-left">
             <div className="text-3xl font-bold tracking-tight sm:text-4xl">
               <PrismicRichText field={slice.primary.title} />
@@ -47,7 +47,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
               <Socials />
             </div>
           </div>
-          <div className="w-full m-auto p-8">
+          <div className="w-full m-auto md:p-8">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
               <div className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
                 <PrismicNextImage

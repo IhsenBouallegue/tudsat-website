@@ -14,7 +14,7 @@ export default function Bounded({
   children,
   ...restProps
 }: BoundedProps) {
-  const basePadding = withExtraPadding ? "px-10 py-8" : "px-6 py-4";
+  const basePadding = withExtraPadding ? "px-4 py-8" : "px-6 py-4";
   const mdPadding = withExtraPadding ? "md:px-10 md:py-10" : "md:px-6 md:py-6";
   const lgPadding = withExtraPadding ? "lg:px-12 lg:py-12" : "lg:px-8 lg:py-8";
 
