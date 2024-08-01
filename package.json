@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"yarn:next:dev\" \"yarn:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "dev": "concurrently \"bun:next:dev\" \"bun:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
     "next:dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -67,5 +67,5 @@
     "tailwindcss": "^3",
     "typescript": "5.2.2"
   },
-  "packageManager": "yarn@4.1.1"
+  "trustedDependencies": ["@biomejs/biome"]
 }

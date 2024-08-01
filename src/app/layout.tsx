@@ -19,11 +19,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 
-
 const metadataTitle = "TUDSaT";
 const metadataDescription = "TUDSaT is a space focused student association at TU Darmstadt.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tudsat.space"),
   title: metadataTitle,
   description: metadataDescription,
   openGraph: {

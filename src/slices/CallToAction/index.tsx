@@ -34,10 +34,10 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
             <div className="text-3xl font-bold tracking-tight sm:text-4xl">
               <PrismicRichText field={slice.primary.title} />
             </div>
-            <div className="mt-6 text-lg leading-8 text-muted">
+            <div className="mt-6 text-lg leading-8 text-muted-foreground">
               <PrismicRichText field={slice.primary.body} />
             </div>
-            <div className="mt-10 flex items-center justify-between gap-x-6 lg:justify-start">
+            <div className="mt-10 gap-6 flex flex-col md:flex-row items-center justify-between  lg:justify-start">
               <PrismicNextLink
                 field={slice.primary.call_to_action_link}
                 className={buttonVariants({ variant: "default" })}
