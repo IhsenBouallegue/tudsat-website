@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import dynamic from "next/dynamic";
 import { Orbitron, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -63,6 +64,7 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
         <PrismicPreview repositoryName={repositoryName} />
+        <Analytics />
       </body>
     </html>
   );
