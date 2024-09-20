@@ -2,7 +2,7 @@
   "recommendations": [
     "bradlc.vscode-tailwindcss",
     "formulahendry.auto-rename-tag",
-    "esbenp.prettier-vscode",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "biomejs.biome"
   ]
 }
